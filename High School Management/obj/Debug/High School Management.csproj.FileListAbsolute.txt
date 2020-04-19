@@ -1,0 +1,14 @@
+C:\Users\Fahim\source\repos\High School Management\High School Management\bin\Debug\High School Management.exe.config
+C:\Users\Fahim\source\repos\High School Management\High School Management\bin\Debug\High School Management.exe
+C:\Users\Fahim\source\repos\High School Management\High School Management\bin\Debug\High School Management.pdb
+C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High_School_Management.Login.resources
+C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High_School_Management.Properties.Resources.resources
+C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High School Management.csproj.GenerateResource.cache
+C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High School Management.csproj.CoreCompileInputs.cache
+C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High School Management.exe
+C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High School Management.pdb
+C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High School Management.csprojAssemblyReference.cache
+C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High_School_Management.Home.resources
+C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High_School_Management.Student.resources
+C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High_School_Management.Results.resources
+C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High_School_Management.Users.resources
