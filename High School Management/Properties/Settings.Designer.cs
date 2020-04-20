@@ -32,5 +32,16 @@ namespace High_School_Management.Properties {
                 return ((string)(this["schoolConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;Initial Catalog=TestDB;Integrated Security=True;Pooling=" +
+            "False")]
+        public string TestDBConnectionString {
+            get {
+                return ((string)(this["TestDBConnectionString"]));
+            }
+        }
     }
 }

@@ -28,6 +28,9 @@ namespace High_School_Management
             HomePanels.Add(panelTeacher);
             HomePanels.Add(panelResult);
             HomePanels.Add(panelUsers);
+            HomePanels.Add(panelSubject);
+            HomePanels.Add(panelClass);
+
 
             HomeButtons.Add(button1);
             HomeButtons.Add(button2);
@@ -37,11 +40,12 @@ namespace High_School_Management
             HomeButtons.Add(button6);
             HomeButtons.Add(button7);
             HomeButtons.Add(button8);
+            HomeButtons.Add(button18);
+
         }
 
         void ResetAll()
         {
-            this.Text = "Home";
             foreach (var i in HomePanels)
             {
                 i.Visible = false;
@@ -56,7 +60,6 @@ namespace High_School_Management
         private void button3_Click(object sender, EventArgs e)
         {
             ResetAll();
-            this.Text = "Student";
             panelStudent.Visible = true;
             button3.Enabled = false;
             button3.BackColor = System.Drawing.Color.DodgerBlue;
@@ -65,7 +68,6 @@ namespace High_School_Management
         private void button6_Click(object sender, EventArgs e)
         {
             ResetAll();
-            this.Text = "Teacher";
             panelTeacher.Visible = true;
             button6.Enabled = false;
             button6.BackColor = System.Drawing.Color.DodgerBlue;
@@ -74,7 +76,6 @@ namespace High_School_Management
         private void button7_Click(object sender, EventArgs e)
         {
             ResetAll();
-            this.Text = "Result";
             panelResult.Visible = true;
             button7.Enabled = false;
             button7.BackColor = System.Drawing.Color.DodgerBlue;
@@ -83,26 +84,11 @@ namespace High_School_Management
         private void button2_Click(object sender, EventArgs e)
         {
             ResetAll();
-            this.Text = "User";
             panelUsers.Visible = true;
             button2.Enabled = false;
             button2.BackColor = System.Drawing.Color.DodgerBlue;
-            this.usersTableAdapter.Fill(this.schoolDataSet1.users);
-            // RefreshUserTable();
+            RefreshUserTable();
         }
-
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            new AddUsers(this).Show();
-            //RefreshUserTable();
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-            new AddStudents().Show();
-        }
-
 
         void RefreshStudentTable()
         {
@@ -125,12 +111,155 @@ namespace High_School_Management
             dataGridViewUser.DataSource = dt;
             conn.Close();
         }
-
-        private void Home_Load(object sender, EventArgs e)
+        void RefreshSubjectTable(string st)
         {
-            // TODO: This line of code loads data into the 'schoolDataSet1.users' table. You can move, or remove it, as needed.
-            this.usersTableAdapter.Fill(this.schoolDataSet1.users);
+            string connString;  
+            if (st == "All")
+                connString = "SELECT * FROM [viewAllSubject]";
+            else  if(st=="sub")
+                connString = "SELECT * FROM [viewAllSubject] Where [subject name] like '%" + textSubSearch.Text + "%'";
+            else
+                connString = "SELECT * FROM [viewAllSubject] Where [Assigned Class]= '" + st + "'";
+
+            conn.Open();
+            SqlDataAdapter sda = new SqlDataAdapter(connString, conn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridViewSubject.DataSource = dt;
+            conn.Close();
+        }
+        void RefreshClassTable(string st)
+
+        {
+            string connString;
+            if (st == "All")
+                connString = "SELECT * FROM [viewAllClass]";
+            else
+                connString = "SELECT * FROM [viewAllClass] Where [Class Name]= '" + st + "'";
+
+            conn.Open();
+            SqlDataAdapter sda = new SqlDataAdapter(connString, conn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridViewClass.DataSource = dt;
+            conn.Close();
+        }
+        void GetComboClassData(ComboBox cmbox)
+        {
+            conn.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [class]", conn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            DataRow dr = dt.NewRow();
+            dr.ItemArray = new object[] { 0, "All" };
+            dt.Rows.InsertAt(dr, 0);
+           cmbox.ValueMember = "class_name";
+            cmbox.DisplayMember = "class_name";
+            cmbox.DataSource = dt;
+            conn.Close();
+        }
+        void GetSubTextbox()
+        {
+            
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT subject_name FROM [subject]", conn);
+            SqlDataReader dr = cmd.ExecuteReader() ;
+            AutoCompleteStringCollection subCollection = new AutoCompleteStringCollection();
+            while (dr.Read())
+                subCollection.Add(dr.GetString(0));
+            textSubSearch.AutoCompleteCustomSource = subCollection;
+            dr.Close();
+            conn.Close();
 
         }
+        private void button10_Click(object sender, EventArgs e)
+        {
+            new AddUsers().Show();
+            RefreshUserTable();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            new AddStudents().Show();
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            ResetAll();
+            panelSubject.Visible = true;
+            button18.Enabled = false;
+            button18.BackColor = System.Drawing.Color.DodgerBlue;
+
+            GetComboClassData(comboClassList);
+            GetSubTextbox();
+            RefreshSubjectTable(comboClassList.GetItemText(comboClassList.SelectedItem));
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void comboClassList_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+
+            RefreshSubjectTable(comboClassList.GetItemText(comboClassList.SelectedItem));
+
+        }
+        private void textSubSearch_TextChanged(object sender, EventArgs e)
+        {
+            RefreshSubjectTable("sub");
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            new AddSubject().Show();
+        }
+
+        private void button19_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ResetAll();
+            panelClass.Visible = true;
+            button5.Enabled = false;
+            button5.BackColor = System.Drawing.Color.DodgerBlue; 
+
+            GetComboClassData(comboBoxClass2);
+            RefreshClassTable(comboBoxClass2.GetItemText(comboBoxClass2.SelectedItem));
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            ResetAll();
+            //panelClass.Visible = true;
+            button8.Enabled = false;
+            button8.BackColor = System.Drawing.Color.DodgerBlue;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ResetAll();
+            //panelClass.Visible = true;
+            button1.Enabled = false;
+            button1.BackColor = System.Drawing.Color.DodgerBlue;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ResetAll();
+            //panelClass.Visible = true;
+            button4.Enabled = false;
+            button4.BackColor = System.Drawing.Color.DodgerBlue;
+        }
+
+        private void comboBoxClass2_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            RefreshClassTable(comboBoxClass2.GetItemText(comboBoxClass2.SelectedItem));
+        }
     }
+    
 }

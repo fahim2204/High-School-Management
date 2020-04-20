@@ -30,11 +30,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.button18 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -67,14 +71,21 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
-            this.schoolDataSet = new High_School_Management.schoolDataSet();
-            this.schoolDataSet1 = new High_School_Management.schoolDataSet1();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usersTableAdapter = new High_School_Management.schoolDataSet1TableAdapters.usersTableAdapter();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelSubject = new System.Windows.Forms.Panel();
+            this.dataGridViewSubject = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textSubSearch = new System.Windows.Forms.TextBox();
+            this.comboClassList = new System.Windows.Forms.ComboBox();
+            this.button20 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
+            this.panelClass = new System.Windows.Forms.Panel();
+            this.dataGridViewClass = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.comboBoxClass2 = new System.Windows.Forms.ComboBox();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
+            this.button23 = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelTeacher.SuspendLayout();
@@ -85,14 +96,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudent)).BeginInit();
             this.panelResult.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schoolDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schoolDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
+            this.panelSubject.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSubject)).BeginInit();
+            this.panelClass.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClass)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelMenu.Controls.Add(this.button18);
             this.panelMenu.Controls.Add(this.button8);
             this.panelMenu.Controls.Add(this.button3);
             this.panelMenu.Controls.Add(this.button7);
@@ -108,19 +121,35 @@
             this.panelMenu.Size = new System.Drawing.Size(205, 700);
             this.panelMenu.TabIndex = 1;
             // 
+            // button18
+            // 
+            this.button18.BackColor = System.Drawing.Color.AliceBlue;
+            this.button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button18.Location = new System.Drawing.Point(0, 346);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(205, 45);
+            this.button18.TabIndex = 9;
+            this.button18.TabStop = false;
+            this.button18.Text = "Subjects";
+            this.button18.UseVisualStyleBackColor = false;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
             // button8
             // 
             this.button8.BackColor = System.Drawing.Color.AliceBlue;
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button8.Location = new System.Drawing.Point(0, 478);
+            this.button8.Location = new System.Drawing.Point(0, 522);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(205, 45);
             this.button8.TabIndex = 8;
             this.button8.TabStop = false;
             this.button8.Text = "Employee";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button3
             // 
@@ -144,7 +173,7 @@
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button7.Location = new System.Drawing.Point(0, 434);
+            this.button7.Location = new System.Drawing.Point(0, 478);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(205, 45);
             this.button7.TabIndex = 7;
@@ -166,6 +195,7 @@
             this.button4.TabStop = false;
             this.button4.Text = "Accounts";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button6
             // 
@@ -173,7 +203,7 @@
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button6.Location = new System.Drawing.Point(0, 390);
+            this.button6.Location = new System.Drawing.Point(0, 434);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(205, 45);
             this.button6.TabIndex = 6;
@@ -203,13 +233,14 @@
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button5.Location = new System.Drawing.Point(0, 346);
+            this.button5.Location = new System.Drawing.Point(0, 390);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(205, 45);
             this.button5.TabIndex = 5;
             this.button5.TabStop = false;
             this.button5.Text = "Classes";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button1
             // 
@@ -225,6 +256,7 @@
             this.button1.TabStop = false;
             this.button1.Text = "Home";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
@@ -314,47 +346,12 @@
             // 
             // dataGridViewUser
             // 
-            this.dataGridViewUser.AllowUserToAddRows = false;
-            this.dataGridViewUser.AllowUserToDeleteRows = false;
-            this.dataGridViewUser.AllowUserToOrderColumns = true;
-            this.dataGridViewUser.AllowUserToResizeRows = false;
-            this.dataGridViewUser.AutoGenerateColumns = false;
-            this.dataGridViewUser.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewUser.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridViewUser.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewUser.ColumnHeadersHeight = 30;
-            this.dataGridViewUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridViewUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nameDataGridViewTextBoxColumn,
-            this.usernameDataGridViewTextBoxColumn,
-            this.passwordDataGridViewTextBoxColumn,
-            this.typeDataGridViewTextBoxColumn});
-            this.dataGridViewUser.DataSource = this.usersBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewUser.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewUser.Location = new System.Drawing.Point(39, 196);
             this.dataGridViewUser.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridViewUser.MultiSelect = false;
             this.dataGridViewUser.Name = "dataGridViewUser";
-            this.dataGridViewUser.ReadOnly = true;
             this.dataGridViewUser.RowHeadersWidth = 51;
             this.dataGridViewUser.RowTemplate.Height = 24;
-            this.dataGridViewUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewUser.ShowEditingIcon = false;
             this.dataGridViewUser.Size = new System.Drawing.Size(816, 441);
             this.dataGridViewUser.TabIndex = 9;
             // 
@@ -453,7 +450,6 @@
             // 
             // dataGridView4
             // 
-            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Location = new System.Drawing.Point(25, 237);
             this.dataGridView4.Margin = new System.Windows.Forms.Padding(2);
@@ -543,6 +539,7 @@
             this.button16.TabIndex = 12;
             this.button16.Text = "Add Result";
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // button17
             // 
@@ -555,70 +552,274 @@
             this.button17.Text = "View/Edit Result";
             this.button17.UseVisualStyleBackColor = true;
             // 
-            // schoolDataSet
+            // panelSubject
             // 
-            this.schoolDataSet.DataSetName = "schoolDataSet";
-            this.schoolDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.panelSubject.Controls.Add(this.dataGridViewSubject);
+            this.panelSubject.Controls.Add(this.label5);
+            this.panelSubject.Controls.Add(this.textSubSearch);
+            this.panelSubject.Controls.Add(this.comboClassList);
+            this.panelSubject.Controls.Add(this.button20);
+            this.panelSubject.Controls.Add(this.button21);
+            this.panelSubject.Location = new System.Drawing.Point(205, 0);
+            this.panelSubject.Name = "panelSubject";
+            this.panelSubject.Size = new System.Drawing.Size(895, 700);
+            this.panelSubject.TabIndex = 3;
+            this.panelSubject.Visible = false;
             // 
-            // schoolDataSet1
+            // dataGridViewSubject
             // 
-            this.schoolDataSet1.DataSetName = "schoolDataSet1";
-            this.schoolDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dataGridViewSubject.AllowUserToAddRows = false;
+            this.dataGridViewSubject.AllowUserToDeleteRows = false;
+            this.dataGridViewSubject.AllowUserToResizeRows = false;
+            this.dataGridViewSubject.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewSubject.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewSubject.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dataGridViewSubject.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSubject.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.dataGridViewSubject.ColumnHeadersHeight = 30;
+            this.dataGridViewSubject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewSubject.DefaultCellStyle = dataGridViewCellStyle14;
+            this.dataGridViewSubject.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewSubject.Location = new System.Drawing.Point(28, 139);
+            this.dataGridViewSubject.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewSubject.MultiSelect = false;
+            this.dataGridViewSubject.Name = "dataGridViewSubject";
+            this.dataGridViewSubject.ReadOnly = true;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSubject.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.dataGridViewSubject.RowHeadersWidth = 51;
+            this.dataGridViewSubject.RowTemplate.Height = 24;
+            this.dataGridViewSubject.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewSubject.ShowEditingIcon = false;
+            this.dataGridViewSubject.Size = new System.Drawing.Size(483, 479);
+            this.dataGridViewSubject.TabIndex = 20;
             // 
-            // usersBindingSource
+            // label5
             // 
-            this.usersBindingSource.DataMember = "users";
-            this.usersBindingSource.DataSource = this.schoolDataSet1;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label5.Location = new System.Drawing.Point(295, 84);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(52, 20);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Class:";
             // 
-            // usersTableAdapter
+            // textSubSearch
             // 
-            this.usersTableAdapter.ClearBeforeFill = true;
+            this.textSubSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.textSubSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.textSubSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textSubSearch.Location = new System.Drawing.Point(94, 82);
+            this.textSubSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.textSubSearch.Name = "textSubSearch";
+            this.textSubSearch.Size = new System.Drawing.Size(173, 26);
+            this.textSubSearch.TabIndex = 16;
+            this.textSubSearch.TextChanged += new System.EventHandler(this.textSubSearch_TextChanged);
             // 
-            // nameDataGridViewTextBoxColumn
+            // comboClassList
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.comboClassList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.comboClassList.FormattingEnabled = true;
+            this.comboClassList.Location = new System.Drawing.Point(347, 80);
+            this.comboClassList.Margin = new System.Windows.Forms.Padding(2);
+            this.comboClassList.Name = "comboClassList";
+            this.comboClassList.Size = new System.Drawing.Size(122, 28);
+            this.comboClassList.TabIndex = 14;
+            this.comboClassList.SelectionChangeCommitted += new System.EventHandler(this.comboClassList_SelectionChangeCommitted);
             // 
-            // usernameDataGridViewTextBoxColumn
+            // button20
             // 
-            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "username";
-            this.usernameDataGridViewTextBoxColumn.HeaderText = "Username";
-            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
-            this.usernameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button20.Location = new System.Drawing.Point(611, 212);
+            this.button20.Margin = new System.Windows.Forms.Padding(2);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(134, 91);
+            this.button20.TabIndex = 12;
+            this.button20.Text = "Add Subject";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
-            // passwordDataGridViewTextBoxColumn
+            // button21
             // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
+            this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button21.Location = new System.Drawing.Point(611, 388);
+            this.button21.Margin = new System.Windows.Forms.Padding(2);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(134, 91);
+            this.button21.TabIndex = 13;
+            this.button21.Text = "View/Edit Subject";
+            this.button21.UseVisualStyleBackColor = true;
             // 
-            // typeDataGridViewTextBoxColumn
+            // panelClass
             // 
-            this.typeDataGridViewTextBoxColumn.DataPropertyName = "type";
-            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
-            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
-            this.typeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.panelClass.Controls.Add(this.button23);
+            this.panelClass.Controls.Add(this.dataGridViewClass);
+            this.panelClass.Controls.Add(this.label4);
+            this.panelClass.Controls.Add(this.textBox2);
+            this.panelClass.Controls.Add(this.comboBoxClass2);
+            this.panelClass.Controls.Add(this.button19);
+            this.panelClass.Controls.Add(this.button22);
+            this.panelClass.Location = new System.Drawing.Point(205, 0);
+            this.panelClass.Name = "panelClass";
+            this.panelClass.Size = new System.Drawing.Size(895, 700);
+            this.panelClass.TabIndex = 4;
+            this.panelClass.Visible = false;
+            // 
+            // dataGridViewClass
+            // 
+            this.dataGridViewClass.AllowUserToAddRows = false;
+            this.dataGridViewClass.AllowUserToDeleteRows = false;
+            this.dataGridViewClass.AllowUserToResizeRows = false;
+            this.dataGridViewClass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewClass.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewClass.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dataGridViewClass.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewClass.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            this.dataGridViewClass.ColumnHeadersHeight = 30;
+            this.dataGridViewClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewClass.DefaultCellStyle = dataGridViewCellStyle17;
+            this.dataGridViewClass.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewClass.Location = new System.Drawing.Point(28, 139);
+            this.dataGridViewClass.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewClass.MultiSelect = false;
+            this.dataGridViewClass.Name = "dataGridViewClass";
+            this.dataGridViewClass.ReadOnly = true;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewClass.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            this.dataGridViewClass.RowHeadersWidth = 51;
+            this.dataGridViewClass.RowTemplate.Height = 24;
+            this.dataGridViewClass.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewClass.ShowEditingIcon = false;
+            this.dataGridViewClass.Size = new System.Drawing.Size(533, 479);
+            this.dataGridViewClass.TabIndex = 20;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label4.Location = new System.Drawing.Point(295, 84);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 20);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Class:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.textBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBox2.Location = new System.Drawing.Point(94, 82);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(173, 26);
+            this.textBox2.TabIndex = 16;
+            // 
+            // comboBoxClass2
+            // 
+            this.comboBoxClass2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.comboBoxClass2.FormattingEnabled = true;
+            this.comboBoxClass2.Location = new System.Drawing.Point(347, 80);
+            this.comboBoxClass2.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxClass2.Name = "comboBoxClass2";
+            this.comboBoxClass2.Size = new System.Drawing.Size(122, 28);
+            this.comboBoxClass2.TabIndex = 14;
+            this.comboBoxClass2.SelectionChangeCommitted += new System.EventHandler(this.comboBoxClass2_SelectionChangeCommitted);
+            // 
+            // button19
+            // 
+            this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button19.Location = new System.Drawing.Point(659, 188);
+            this.button19.Margin = new System.Windows.Forms.Padding(2);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(134, 91);
+            this.button19.TabIndex = 12;
+            this.button19.Text = "Add Class";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click_1);
+            // 
+            // button22
+            // 
+            this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button22.Location = new System.Drawing.Point(659, 320);
+            this.button22.Margin = new System.Windows.Forms.Padding(2);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(134, 91);
+            this.button22.TabIndex = 13;
+            this.button22.Text = "View/Edit Class";
+            this.button22.UseVisualStyleBackColor = true;
+            // 
+            // button23
+            // 
+            this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button23.Location = new System.Drawing.Point(659, 454);
+            this.button23.Margin = new System.Windows.Forms.Padding(2);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(134, 91);
+            this.button23.TabIndex = 21;
+            this.button23.Text = "Assign Subject";
+            this.button23.UseVisualStyleBackColor = true;
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 661);
-            //this.Controls.Add(this.panelStudent);
+            this.Controls.Add(this.panelClass);
+            this.Controls.Add(this.panelStudent);
             this.Controls.Add(this.panelResult);
-           // this.Controls.Add(this.panelTeacher);
-           // this.Controls.Add(this.panelUsers);
-            //this.Controls.Add(this.panelUsers);
+            this.Controls.Add(this.panelTeacher);
+            this.Controls.Add(this.panelUsers);
+            this.Controls.Add(this.panelSubject);
             this.Controls.Add(this.panelMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
-            this.Load += new System.EventHandler(this.Home_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -631,9 +832,12 @@
             this.panelResult.ResumeLayout(false);
             this.panelResult.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schoolDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schoolDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
+            this.panelSubject.ResumeLayout(false);
+            this.panelSubject.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSubject)).EndInit();
+            this.panelClass.ResumeLayout(false);
+            this.panelClass.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClass)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -673,14 +877,22 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button17;
-        public schoolDataSet schoolDataSet;
-        public schoolDataSet1 schoolDataSet1;
-        private System.Windows.Forms.BindingSource usersBindingSource;
-        public schoolDataSet1TableAdapters.usersTableAdapter usersTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        public System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Panel panelSubject;
+        private System.Windows.Forms.DataGridView dataGridViewSubject;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textSubSearch;
+        private System.Windows.Forms.ComboBox comboClassList;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Panel panelClass;
+        private System.Windows.Forms.DataGridView dataGridViewClass;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox comboBoxClass2;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button button23;
     }
 }
 
@@ -692,4 +904,5 @@
             this.Controls.Add(this.panelResult);
             this.Controls.Add(this.panelTeacher);
             this.Controls.Add(this.panelUsers);
+            this.Controls.Add(this.panelSubject);
 */
