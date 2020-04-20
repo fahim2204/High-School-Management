@@ -12,3 +12,5 @@ C:\Users\Fahim\source\repos\High School Management\High School Management\obj\De
 C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High_School_Management.Student.resources
 C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High_School_Management.Results.resources
 C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High_School_Management.Users.resources
+C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High_School_Management.AddUsers.resources
+C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High_School_Management.AddStudents.resources

@@ -13,12 +13,13 @@ namespace High_School_Management
     {
         public Users()
         {
+            this.button2.Enabled = false;
+            button2.BackColor = System.Drawing.Color.DodgerBlue;
             InitializeComponent();
+            RefreshTable();
         }
-
-        private void button9_Click(object sender, EventArgs e)
+        void RefreshTable()
         {
-
             SqlConnection conn = new SqlConnection(@"Server=.\SQLEXPRESS;Database=school;Integrated Security=true");
             conn.Open();
             //SqlCommand cmd = new SqlCommand("SELECT * FROM [Users]", conn);
@@ -27,6 +28,17 @@ namespace High_School_Management
             sda.Fill(dt);
             dataGridView1.DataSource = dt;
             conn.Close();
+        }
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+            
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            new AddUsers().Show();
+            RefreshTable();
         }
     }
 }

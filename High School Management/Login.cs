@@ -28,7 +28,8 @@ namespace High_School_Management
 
             if (da.Read())
             {
-                new Home().Show();
+                Home h = new Home();
+               h.Show();
             }
             else
             {

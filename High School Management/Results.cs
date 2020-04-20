@@ -12,6 +12,8 @@ namespace High_School_Management
     {
         public Results()
         {
+            this.button7.Enabled = false;
+            button7.BackColor = System.Drawing.Color.DodgerBlue;
             InitializeComponent();
         }
 
