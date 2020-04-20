@@ -16,6 +16,8 @@ namespace High_School_Management
         SqlConnection conn = new SqlConnection(@"Server=.\SQLEXPRESS;Database=school;Integrated Security=true");
         List<Panel> HomePanels = new List<Panel>();
         List<Button> HomeButtons = new List<Button>();
+        ToolTip t = new ToolTip();
+
 
         public Home()
         {
@@ -95,7 +97,7 @@ namespace High_School_Management
             SqlConnection conn = new SqlConnection(@"Server=.\SQLEXPRESS;Database=school;Integrated Security=true");
             conn.Open();
             //SqlCommand cmd = new SqlCommand("SELECT * FROM [Users]", conn);
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [students]", conn);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [viewAllStudent]", conn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dataGridViewStudent.DataSource = dt;
@@ -105,7 +107,7 @@ namespace High_School_Management
         {
             conn.Open();
             //SqlCommand cmd = new SqlCommand("SELECT * FROM [Users]", conn);
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [Users]", conn);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [viewAllUser]", conn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dataGridViewUser.DataSource = dt;
@@ -216,11 +218,6 @@ namespace High_School_Management
             new AddSubject().Show();
         }
 
-        private void button19_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void button5_Click(object sender, EventArgs e)
         {
             ResetAll();
@@ -258,7 +255,22 @@ namespace High_School_Management
 
         private void comboBoxClass2_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            RefreshClassTable(comboBoxClass2.GetItemText(comboBoxClass2.SelectedItem));
+             RefreshClassTable(comboBoxClass2.GetItemText(comboBoxClass2.SelectedItem));
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            new AssignSubject().Show();
+        }
+
+        private void comboBoxClass2_MouseHover(object sender, EventArgs e)
+        {
+            t.Show("Select a class to show it's assigned subject", comboBoxClass2);
+        }
+
+        private void comboBoxClass2_MouseLeave(object sender, EventArgs e)
+        {
+
         }
     }
     

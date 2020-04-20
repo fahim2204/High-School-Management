@@ -13,6 +13,8 @@ namespace High_School_Management
 {
     public partial class AddStudents : Form
     {
+        SqlConnection conn = new SqlConnection(@"Server=.\SQLEXPRESS;Database=school;Integrated Security=true");
+
         public AddStudents()
         {
             InitializeComponent();
@@ -33,7 +35,6 @@ namespace High_School_Management
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(@"Server=.\SQLEXPRESS;Database=school;Integrated Security=true");
             conn.Open();
             string query = "INSERT INTO [students] (Roll,Name,class,father,mother,contact,gender,dob,admissionDate,address) VALUES(" + textRoll.Text + ",'" + textName.Text + "','" + comboClass.Text + "','" + textFather.Text + "','" + textMother.Text + "'," + textContact.Text + ",'" + RadioValue + "','" + dateDob.Value.Date.ToString("yyyyMMdd") + "','" + dateAdmit.Value.Date.ToString("yyyyMMdd") + "','" + textAddress.Text + "')";
             SqlCommand cmd = new SqlCommand(query, conn);
@@ -86,6 +87,43 @@ namespace High_School_Management
                 return;
             //textBox4.Text = fd1.FileName;
             profileImage.Image = Image.FromFile(fd1.FileName);
+        }
+
+        private void AddStudents_Load(object sender, EventArgs e)
+        {
+            radioMale.Checked = true;
+            dateAdmit.Value = DateTime.Today;
+
+            conn.Open();
+            SqlDataAdapter sda1 = new SqlDataAdapter("SELECT * FROM [class] order by class_id", conn);
+            DataTable dt1 = new DataTable();
+            sda1.Fill(dt1);
+
+            DataRow dr1 = dt1.NewRow();
+            dr1.ItemArray = new object[] { 0, "--Select Class--" };
+            dt1.Rows.InsertAt(dr1, 0);
+
+            comboClass.ValueMember = "class_name";
+            comboClass.DisplayMember = "class_name";
+            comboClass.DataSource = dt1;
+
+
+            conn.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textRoll.Text = "";
+            textName.Text = "";
+            comboClass.SelectedIndex = 0;
+            textFather.Text = "";
+            textMother.Text = "";
+            textContact.Text = "";
+            radioMale.Checked = true;
+            dateDob.Value = new DateTime(2000, 01, 01);
+            dateAdmit.Value = DateTime.Today;
+            textAddress.Text = "";
+
         }
     }
 }
