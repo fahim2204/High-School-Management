@@ -23,12 +23,12 @@ namespace High_School_Management
 
             SqlConnection conn = new SqlConnection(@"Server=.\SQLEXPRESS;Database=school;Integrated Security=true");
             conn.Open();
-            SqlCommand cmd = new SqlCommand("SELECT Username,password FROM [Users] WHERE Username = '" + textUsername.Text + "' AND Password = '" + textPassword.Text + "'", conn);
+            SqlCommand cmd = new SqlCommand("SELECT name,Username,password FROM [Users] WHERE Username = '" + textUsername.Text + "' AND Password = '" + textPassword.Text + "'", conn);
             SqlDataReader da = cmd.ExecuteReader();
 
             if (da.Read())
             {
-                Home h = new Home();
+                Home h = new Home(da["name"].ToString());
                h.Show();
             }
             else

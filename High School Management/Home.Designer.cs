@@ -89,6 +89,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxClass2 = new System.Windows.Forms.ComboBox();
             this.button22 = new System.Windows.Forms.Button();
+            this.welcome = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelTeacher.SuspendLayout();
@@ -135,7 +136,7 @@
             this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button18.Location = new System.Drawing.Point(0, 351);
             this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(202, 45);
+            this.button18.Size = new System.Drawing.Size(203, 45);
             this.button18.TabIndex = 9;
             this.button18.TabStop = false;
             this.button18.Text = "Subjects";
@@ -153,7 +154,7 @@
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button8.Location = new System.Drawing.Point(0, 535);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(202, 45);
+            this.button8.Size = new System.Drawing.Size(203, 45);
             this.button8.TabIndex = 8;
             this.button8.TabStop = false;
             this.button8.Text = "Employee";
@@ -172,7 +173,7 @@
             this.button3.Location = new System.Drawing.Point(0, 305);
             this.button3.Margin = new System.Windows.Forms.Padding(0);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(202, 45);
+            this.button3.Size = new System.Drawing.Size(203, 45);
             this.button3.TabIndex = 4;
             this.button3.TabStop = false;
             this.button3.Text = "Students";
@@ -190,7 +191,7 @@
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button7.Location = new System.Drawing.Point(0, 489);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(202, 45);
+            this.button7.Size = new System.Drawing.Size(203, 45);
             this.button7.TabIndex = 7;
             this.button7.TabStop = false;
             this.button7.Text = "Results";
@@ -208,7 +209,7 @@
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button4.Location = new System.Drawing.Point(0, 259);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(202, 45);
+            this.button4.Size = new System.Drawing.Size(203, 45);
             this.button4.TabIndex = 3;
             this.button4.TabStop = false;
             this.button4.Text = "Accounts";
@@ -226,7 +227,7 @@
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button6.Location = new System.Drawing.Point(0, 443);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(202, 45);
+            this.button6.Size = new System.Drawing.Size(203, 45);
             this.button6.TabIndex = 6;
             this.button6.TabStop = false;
             this.button6.Text = "Teachers";
@@ -244,7 +245,7 @@
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button2.Location = new System.Drawing.Point(0, 213);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(202, 45);
+            this.button2.Size = new System.Drawing.Size(203, 45);
             this.button2.TabIndex = 2;
             this.button2.TabStop = false;
             this.button2.Text = "Users";
@@ -262,7 +263,7 @@
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button5.Location = new System.Drawing.Point(0, 397);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(202, 45);
+            this.button5.Size = new System.Drawing.Size(203, 45);
             this.button5.TabIndex = 5;
             this.button5.TabStop = false;
             this.button5.Text = "Classes";
@@ -281,7 +282,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button1.Location = new System.Drawing.Point(0, 167);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 45);
+            this.button1.Size = new System.Drawing.Size(203, 45);
             this.button1.TabIndex = 1;
             this.button1.TabStop = false;
             this.button1.Text = "Home";
@@ -887,19 +888,23 @@
             this.button22.Text = "View/Edit Class";
             this.button22.UseVisualStyleBackColor = true;
             // 
+            // welcome
+            // 
+            this.welcome.AutoSize = true;
+            this.welcome.Font = new System.Drawing.Font("Palatino Linotype", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcome.Location = new System.Drawing.Point(436, 11);
+            this.welcome.Name = "welcome";
+            this.welcome.Size = new System.Drawing.Size(105, 45);
+            this.welcome.TabIndex = 2;
+            this.welcome.Text = "label6";
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 661);
-            this.Controls.Add(this.panelUsers);
-            this.Controls.Add(this.panelStudent);
-            this.Controls.Add(this.panelResult);
-            this.Controls.Add(this.panelTeacher);
-            this.Controls.Add(this.panelUsers);
-            this.Controls.Add(this.panelClass);
-            this.Controls.Add(this.panelSubject);
             this.Controls.Add(this.panelMenu);
+            this.Controls.Add(this.welcome);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Home";
@@ -924,6 +929,7 @@
             this.panelClass.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClass)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -976,6 +982,7 @@
         private System.Windows.Forms.ComboBox comboBoxClass2;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.Label welcome;
     }
 }
 

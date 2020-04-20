@@ -38,12 +38,12 @@ namespace High_School_Management
             SqlCommand cmd = new SqlCommand(query, conn);
 
             try
-            {
+           {
                 int result = cmd.ExecuteNonQuery();
                 if (result > 0)
                     MessageBox.Show("Successfully added!!!", "Succesfull");
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message.ToString(), "Error"); }
+           }
+           catch (Exception ex) { MessageBox.Show(ex.Message.ToString(), "Error"); }
             h.RefreshStudentTable();
             conn.Close();
         }

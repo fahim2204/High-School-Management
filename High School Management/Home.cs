@@ -17,12 +17,16 @@ namespace High_School_Management
         List<Panel> HomePanels = new List<Panel>();
         List<Button> HomeButtons = new List<Button>();
         ToolTip t = new ToolTip();
+        string user;
 
 
-        public Home()
+        public Home(string name)
         {
             InitializeComponent();
             AddItem();
+            this.Name = name;
+            welcome.Text = "Welcome "+name;
+
         }
         void AddItem()
         {

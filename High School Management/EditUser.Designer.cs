@@ -54,18 +54,18 @@
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(261, 33);
-            this.comboBox1.TabIndex = 24;
+            this.comboBox1.TabIndex = 4;
             // 
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.Color.ForestGreen;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btnClear.Location = new System.Drawing.Point(481, 303);
+            this.btnClear.Location = new System.Drawing.Point(260, 404);
             this.btnClear.Margin = new System.Windows.Forms.Padding(2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(138, 54);
-            this.btnClear.TabIndex = 26;
+            this.btnClear.TabIndex = 5;
             this.btnClear.Text = "Update";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -75,11 +75,11 @@
             this.btnAddUser.BackColor = System.Drawing.Color.Crimson;
             this.btnAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btnAddUser.Location = new System.Drawing.Point(481, 205);
+            this.btnAddUser.Location = new System.Drawing.Point(66, 404);
             this.btnAddUser.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(138, 54);
-            this.btnAddUser.TabIndex = 25;
+            this.btnAddUser.TabIndex = 6;
             this.btnAddUser.Text = "Delete";
             this.btnAddUser.UseVisualStyleBackColor = false;
             this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
@@ -95,7 +95,7 @@
             this.textPassword.Name = "textPassword";
             this.textPassword.PasswordChar = '*';
             this.textPassword.Size = new System.Drawing.Size(261, 31);
-            this.textPassword.TabIndex = 23;
+            this.textPassword.TabIndex = 3;
             this.textPassword.Tag = "";
             // 
             // label6
@@ -129,7 +129,7 @@
             this.textUsername.Margin = new System.Windows.Forms.Padding(2);
             this.textUsername.Name = "textUsername";
             this.textUsername.Size = new System.Drawing.Size(261, 31);
-            this.textUsername.TabIndex = 22;
+            this.textUsername.TabIndex = 2;
             // 
             // label2
             // 
@@ -150,7 +150,7 @@
             this.textName.Margin = new System.Windows.Forms.Padding(2);
             this.textName.Name = "textName";
             this.textName.Size = new System.Drawing.Size(261, 31);
-            this.textName.TabIndex = 21;
+            this.textName.TabIndex = 1;
             // 
             // label1
             // 
@@ -167,7 +167,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(676, 428);
+            this.ClientSize = new System.Drawing.Size(487, 506);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAddUser);
