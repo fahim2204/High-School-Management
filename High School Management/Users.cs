@@ -37,7 +37,7 @@ namespace High_School_Management
 
         private void button10_Click(object sender, EventArgs e)
         {
-            new AddUsers().Show();
+            new AddUsers(this).Show();
             RefreshTable();
         }
     }

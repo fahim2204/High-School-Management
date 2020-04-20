@@ -64,6 +64,16 @@
     <Compile Include="Results.Designer.cs">
       <DependentUpon>Results.cs</DependentUpon>
     </Compile>
+    <Compile Include="schoolDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>schoolDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="schoolDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>schoolDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Student.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +139,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="schoolDataSet.xsc">
+      <DependentUpon>schoolDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="schoolDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>schoolDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="schoolDataSet.xss">
+      <DependentUpon>schoolDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="schoolDataSet1.xsc">
+      <DependentUpon>schoolDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="schoolDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>schoolDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="schoolDataSet1.xss">
+      <DependentUpon>schoolDataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

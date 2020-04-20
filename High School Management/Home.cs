@@ -41,6 +41,7 @@ namespace High_School_Management
 
         void ResetAll()
         {
+            this.Text = "Home";
             foreach (var i in HomePanels)
             {
                 i.Visible = false;
@@ -55,6 +56,7 @@ namespace High_School_Management
         private void button3_Click(object sender, EventArgs e)
         {
             ResetAll();
+            this.Text = "Student";
             panelStudent.Visible = true;
             button3.Enabled = false;
             button3.BackColor = System.Drawing.Color.DodgerBlue;
@@ -63,6 +65,7 @@ namespace High_School_Management
         private void button6_Click(object sender, EventArgs e)
         {
             ResetAll();
+            this.Text = "Teacher";
             panelTeacher.Visible = true;
             button6.Enabled = false;
             button6.BackColor = System.Drawing.Color.DodgerBlue;
@@ -71,6 +74,7 @@ namespace High_School_Management
         private void button7_Click(object sender, EventArgs e)
         {
             ResetAll();
+            this.Text = "Result";
             panelResult.Visible = true;
             button7.Enabled = false;
             button7.BackColor = System.Drawing.Color.DodgerBlue;
@@ -79,11 +83,26 @@ namespace High_School_Management
         private void button2_Click(object sender, EventArgs e)
         {
             ResetAll();
+            this.Text = "User";
             panelUsers.Visible = true;
             button2.Enabled = false;
             button2.BackColor = System.Drawing.Color.DodgerBlue;
-            RefreshUserTable();
+            this.usersTableAdapter.Fill(this.schoolDataSet1.users);
+            // RefreshUserTable();
         }
+
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            new AddUsers(this).Show();
+            //RefreshUserTable();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            new AddStudents().Show();
+        }
+
 
         void RefreshStudentTable()
         {
@@ -106,17 +125,12 @@ namespace High_School_Management
             dataGridViewUser.DataSource = dt;
             conn.Close();
         }
-        private void button10_Click(object sender, EventArgs e)
-        {
-            new AddUsers().Show();
-            RefreshUserTable();
-        }
 
-        private void button13_Click(object sender, EventArgs e)
+        private void Home_Load(object sender, EventArgs e)
         {
-            new AddStudents().Show();
-        }
+            // TODO: This line of code loads data into the 'schoolDataSet1.users' table. You can move, or remove it, as needed.
+            this.usersTableAdapter.Fill(this.schoolDataSet1.users);
 
-      
+        }
     }
 }

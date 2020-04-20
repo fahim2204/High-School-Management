@@ -13,9 +13,11 @@ namespace High_School_Management
 {
     public partial class AddUsers : Form
     {
-        public AddUsers()
+        Home home;
+        public AddUsers(Home home)
         {
             InitializeComponent();
+            this.home = home;
         }
 
         private void datePick_ValueChanged(object sender, EventArgs e)
@@ -71,6 +73,16 @@ namespace High_School_Management
             }
             catch { MessageBox.Show("Please Fillup Correctly!!", "Error"); }
             conn.Close();
+        }
+
+        private void AddUsers_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            home.usersTableAdapter.Fill(home.schoolDataSet1.users);
+        }
+
+        private void AddUsers_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
