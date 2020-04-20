@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddStudents));
             this.btnAddStudent = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.textRoll = new System.Windows.Forms.TextBox();
@@ -351,7 +352,8 @@
             // 
             // profileImage
             // 
-            this.profileImage.BackColor = System.Drawing.Color.Teal;
+            this.profileImage.BackColor = System.Drawing.Color.Cornsilk;
+            this.profileImage.Image = ((System.Drawing.Image)(resources.GetObject("profileImage.Image")));
             this.profileImage.Location = new System.Drawing.Point(558, 26);
             this.profileImage.Name = "profileImage";
             this.profileImage.Size = new System.Drawing.Size(180, 200);

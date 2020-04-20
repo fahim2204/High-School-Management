@@ -14,3 +14,8 @@ C:\Users\Fahim\source\repos\High School Management\High School Management\obj\De
 C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High_School_Management.AddSubject.resources
 C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High_School_Management.AssignSubject.resources
 C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High_School_Management.EditStudent.resources
+C:\Users\Fahim\source\repos\High School Management\High School Management\bin\Debug\High School Management.exe.manifest
+C:\Users\Fahim\source\repos\High School Management\High School Management\bin\Debug\High School Management.application
+C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High School Management.exe.manifest
+C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High School Management.application
+C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High_School_Management.EditUser.resources

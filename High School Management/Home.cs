@@ -275,7 +275,12 @@ namespace High_School_Management
 
         private void button14_Click(object sender, EventArgs e)
         {
-            new EditStudent(dataGridViewStudent.CurrentRow.Cells[0].Value.ToString()).Visible = true;
+            new EditStudent(dataGridViewStudent.CurrentRow.Cells[0].Value.ToString(),this).Visible = true;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            new EditUser(dataGridViewUser.CurrentRow.Cells[0].Value.ToString(), this).Visible = true;
         }
     }
     

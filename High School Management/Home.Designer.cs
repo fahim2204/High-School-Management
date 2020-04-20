@@ -365,6 +365,7 @@
             // 
             // panelUsers
             // 
+            this.panelUsers.BackColor = System.Drawing.Color.Teal;
             this.panelUsers.Controls.Add(this.dataGridViewUser);
             this.panelUsers.Controls.Add(this.button10);
             this.panelUsers.Controls.Add(this.button9);
@@ -382,7 +383,7 @@
             this.dataGridViewUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewUser.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewUser.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dataGridViewUser.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.AppWorkspace;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -414,36 +415,49 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewUser.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewUser.RowHeadersVisible = false;
             this.dataGridViewUser.RowHeadersWidth = 51;
             this.dataGridViewUser.RowTemplate.Height = 24;
             this.dataGridViewUser.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridViewUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewUser.ShowEditingIcon = false;
             this.dataGridViewUser.Size = new System.Drawing.Size(816, 441);
-            this.dataGridViewUser.TabIndex = 9;
+            this.dataGridViewUser.TabIndex = 1;
             // 
             // button10
             // 
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button10.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.button10.Location = new System.Drawing.Point(214, 50);
             this.button10.Margin = new System.Windows.Forms.Padding(2);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(134, 91);
-            this.button10.TabIndex = 7;
+            this.button10.Size = new System.Drawing.Size(175, 91);
+            this.button10.TabIndex = 2;
             this.button10.Text = "Add User";
-            this.button10.UseVisualStyleBackColor = true;
+            this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button9
             // 
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button9.Location = new System.Drawing.Point(520, 50);
+            this.button9.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.button9.Location = new System.Drawing.Point(488, 50);
             this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(134, 91);
-            this.button9.TabIndex = 8;
+            this.button9.Size = new System.Drawing.Size(175, 91);
+            this.button9.TabIndex = 3;
             this.button9.Text = "View/Edit User";
-            this.button9.UseVisualStyleBackColor = true;
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // panelStudent
             // 
@@ -878,7 +892,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 661);
+            this.Controls.Add(this.panelUsers);
             this.Controls.Add(this.panelStudent);
+            this.Controls.Add(this.panelResult);
+            this.Controls.Add(this.panelTeacher);
+            this.Controls.Add(this.panelUsers);
+            this.Controls.Add(this.panelClass);
+            this.Controls.Add(this.panelSubject);
             this.Controls.Add(this.panelMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

@@ -53,7 +53,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioFemale = new System.Windows.Forms.RadioButton();
             this.radioMale = new System.Windows.Forms.RadioButton();
-            this.comboClass = new System.Windows.Forms.TextBox();
+            this.comboClass = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.profileImage)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +73,7 @@
             // 
             // profileImage
             // 
-            this.profileImage.BackColor = System.Drawing.Color.Turquoise;
+            this.profileImage.BackColor = System.Drawing.Color.AntiqueWhite;
             this.profileImage.Location = new System.Drawing.Point(559, 34);
             this.profileImage.Name = "profileImage";
             this.profileImage.Size = new System.Drawing.Size(180, 200);
@@ -322,6 +322,7 @@
             this.button2.TabIndex = 37;
             this.button2.Text = "Delete";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox1
             // 
@@ -368,13 +369,15 @@
             // comboClass
             // 
             this.comboClass.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboClass.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboClass.FormattingEnabled = true;
             this.comboClass.Location = new System.Drawing.Point(236, 125);
             this.comboClass.Margin = new System.Windows.Forms.Padding(2);
             this.comboClass.Name = "comboClass";
-            this.comboClass.Size = new System.Drawing.Size(263, 31);
-            this.comboClass.TabIndex = 41;
-            this.comboClass.Text = "FAHIM FAISAL";
+            this.comboClass.Size = new System.Drawing.Size(263, 33);
+            this.comboClass.TabIndex = 42;
+            this.comboClass.Text = "Ten";
             // 
             // EditStudent
             // 
@@ -443,6 +446,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioFemale;
         private System.Windows.Forms.RadioButton radioMale;
-        private System.Windows.Forms.TextBox comboClass;
+        private System.Windows.Forms.ComboBox comboClass;
     }
 }

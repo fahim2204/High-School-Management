@@ -17,11 +17,13 @@ namespace High_School_Management
         SqlConnection conn = new SqlConnection(@"Server=.\SQLEXPRESS;Database=school;Integrated Security=true");
         string imgurl;
         string stID;
+        Home h;
         string RadioValue = "Male";
-        public EditStudent(string stID)
+        public EditStudent(string stID,Home h)
         {
             InitializeComponent();
             this.stID = stID;
+            this.h = h;
             LoadData();
         }
         void LoadData()
@@ -37,10 +39,21 @@ namespace High_School_Management
             sda.Fill(dt);
             sda2.Fill(dt2);
 
+
+            DataSet ds = new DataSet();
+            SqlDataAdapter sda1 = new SqlDataAdapter("SELECT [class_name] FROM [class]", conn);
+            sda1.Fill(ds);
+            this.comboClass.DataSource = ds.Tables[0];
+            this.comboClass.DisplayMember = "class_name";
+            comboClass.BindingContext = this.BindingContext;
+
+
             try
             {
                 textRoll.Text = dt.Rows[0][3].ToString();
                 textName.Text = dt.Rows[0][1].ToString();
+                //comboClass.SelectedText = dt.Rows[0][2].ToString();
+                //comboClass.SelectedIndex = dt.Rows[0][2].ToString();
                 comboClass.Text = dt.Rows[0][2].ToString();
                 textFather.Text = dt.Rows[0][5].ToString();
                 textMother.Text = dt.Rows[0][6].ToString();
@@ -70,22 +83,29 @@ namespace High_School_Management
                 return;
             profileImage.Image = Image.FromFile(fd1.FileName);
             Image img = Image.FromFile(fd1.FileName);
-            imgurl = "img_" + textName.Text + "_" + comboClass.Text + "_" + textRoll.Text + ".jpg";
-            img.Save(@"..\..\StudentImages\" + imgurl);
+            imgurl = "img_" + textName.Text.Replace(' ','_') + "_" + comboClass.Text + "_" + textRoll.Text + ".jpg";
+
+            try
+            {
+                img.Save(@"..\..\StudentImages\" + imgurl);
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message.ToString(), "Error"); }
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             conn.Open();
-            SqlCommand cmd = new SqlCommand("update [students] set Roll = " + textRoll.Text + ",Name = '" + textName.Text + "',fk_class_id = (select [class_id] from [class] where class_name = '" + comboClass.Text + "'),father = '" + textFather.Text + "',mother = '" + textMother.Text + "',contact =" + textContact.Text + ",gender = '" + RadioValue + "',dob='" + dateDob.Value.Date.ToString("yyyyMMdd") + "',admissionDate= '" + dateAdmit.Value.Date.ToString("yyyyMMdd") + "',address = '" + textAddress.Text + "' where st_id = "+stID+"", conn);
+            SqlCommand cmd = new SqlCommand("update [students] set Roll = " + textRoll.Text + ",Name = '" + textName.Text + "',fk_class_id = (select [class_id] from [class] where class_name = '" + comboClass.Text + "'),father = '" + textFather.Text + "',mother = '" + textMother.Text + "',contact =" + textContact.Text + ",gender = '" + RadioValue + "',dob='" + dateDob.Value.Date.ToString("yyyyMMdd") + "',admissionDate= '" + dateAdmit.Value.Date.ToString("yyyyMMdd") + "',address = '" + textAddress.Text + "',photo ='"+imgurl+"' where st_id = "+stID+"", conn);
             try
             {
                 int result = cmd.ExecuteNonQuery();
                 if (result > 0)
-                    MessageBox.Show("Update Succes!!!", "Succesfull");
+                    MessageBox.Show("Update Success!!!", "Succesfull");
             }
             catch (Exception ex) { MessageBox.Show(ex.Message.ToString(), "Error"); }
             conn.Close();
+            h.RefreshStudentTable();
         }
 
         private void radioMale_CheckedChanged(object sender, EventArgs e)
@@ -96,6 +116,24 @@ namespace High_School_Management
         private void radioFemale_CheckedChanged(object sender, EventArgs e)
         {
             RadioValue = "Female";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("delete from [students] where st_id = " + stID + "", conn);
+            try
+            {
+                int result = cmd.ExecuteNonQuery();
+                if (result > 0)
+                {
+                    MessageBox.Show("Deleted Successfully!!!", "Succesfull");
+                    this.Dispose();
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message.ToString(), "Error"); }
+            conn.Close();
+            h.RefreshStudentTable();
         }
     }
 }

@@ -103,7 +103,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.textPassword);
             this.panel1.Controls.Add(this.textUsername);
-            this.panel1.Location = new System.Drawing.Point(54, 104);
+            this.panel1.Location = new System.Drawing.Point(54, 110);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(399, 221);
             this.panel1.TabIndex = 5;

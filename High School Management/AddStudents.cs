@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace High_School_Management
@@ -16,7 +9,7 @@ namespace High_School_Management
     public partial class AddStudents : Form
     {
         SqlConnection conn = new SqlConnection(@"Server=.\SQLEXPRESS;Database=school;Integrated Security=true");
-        string imgurl = "Default.jpg";
+        string imgurl = "default.jpg";
         Home h;
 
         public AddStudents(Home h)
@@ -36,21 +29,21 @@ namespace High_School_Management
                 e.Handled = true;
         }
 
-        
+
 
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
             conn.Open();
             string query = "INSERT INTO [students] (Roll,Name,fk_class_id,father,mother,contact,gender,dob,admissionDate,address,photo) VALUES(" + textRoll.Text + ",'" + textName.Text + "',(select [class_id] from [class] where class_name = '" + comboClass.Text + "'),'" + textFather.Text + "','" + textMother.Text + "'," + textContact.Text + ",'" + RadioValue + "','" + dateDob.Value.Date.ToString("yyyyMMdd") + "','" + dateAdmit.Value.Date.ToString("yyyyMMdd") + "','" + textAddress.Text + "','" + imgurl + "')";
             SqlCommand cmd = new SqlCommand(query, conn);
-            
-           try
+
+            try
             {
-              int result = cmd.ExecuteNonQuery();
-              if (result > 0)
-                     MessageBox.Show("Successfully added!!!", "Succesfull");
-             }
-             catch(Exception ex) { MessageBox.Show(ex.Message.ToString(), "Error"); }
+                int result = cmd.ExecuteNonQuery();
+                if (result > 0)
+                    MessageBox.Show("Successfully added!!!", "Succesfull");
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message.ToString(), "Error"); }
             h.RefreshStudentTable();
             conn.Close();
         }
@@ -87,8 +80,8 @@ namespace High_School_Management
                 return;
             profileImage.Image = Image.FromFile(fd1.FileName);
             Image img = Image.FromFile(fd1.FileName);
-            imgurl = "img_" + textName.Text + "_" + comboClass.Text + "_" + textRoll.Text + ".jpg";
-            img.Save(@"..\..\StudentImages\"+imgurl);
+            imgurl = "img_" + textName.Text.Replace(' ', '_') + "_" + comboClass.Text + "_" + textRoll.Text + ".jpg";
+            img.Save(@"..\..\StudentImages\" + imgurl);
         }
 
         private void AddStudents_Load(object sender, EventArgs e)
