@@ -53,7 +53,7 @@
             // textPassword
             // 
             this.textPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.textPassword.Location = new System.Drawing.Point(99, 135);
+            this.textPassword.Location = new System.Drawing.Point(99, 152);
             this.textPassword.MaxLength = 20;
             this.textPassword.Name = "textPassword";
             this.textPassword.PasswordChar = '*';
@@ -66,7 +66,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.DodgerBlue;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(28, 135);
+            this.pictureBox1.Location = new System.Drawing.Point(28, 152);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(55, 53);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -78,7 +78,7 @@
             this.btnLogin.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
             this.btnLogin.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnLogin.Location = new System.Drawing.Point(166, 381);
+            this.btnLogin.Location = new System.Drawing.Point(166, 447);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(174, 73);
             this.btnLogin.TabIndex = 3;
@@ -113,7 +113,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(506, 525);
+            this.ClientSize = new System.Drawing.Size(506, 578);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnLogin);
             this.MaximizeBox = false;

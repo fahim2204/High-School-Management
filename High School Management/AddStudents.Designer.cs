@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddStudents));
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAddStudent = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.textRoll = new System.Windows.Forms.TextBox();
             this.textName = new System.Windows.Forms.TextBox();
@@ -59,17 +58,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.profileImage)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // btnAddStudent
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.button2.Location = new System.Drawing.Point(606, 461);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(132, 52);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Add";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnAddStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.btnAddStudent.Location = new System.Drawing.Point(606, 461);
+            this.btnAddStudent.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddStudent.Name = "btnAddStudent";
+            this.btnAddStudent.Size = new System.Drawing.Size(132, 52);
+            this.btnAddStudent.TabIndex = 13;
+            this.btnAddStudent.Text = "Add";
+            this.btnAddStudent.UseVisualStyleBackColor = true;
+            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
             // button3
             // 
@@ -92,6 +91,7 @@
             this.textRoll.Name = "textRoll";
             this.textRoll.Size = new System.Drawing.Size(263, 31);
             this.textRoll.TabIndex = 1;
+            this.textRoll.Text = "1";
             this.textRoll.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textRoll_KeyPress);
             // 
             // textName
@@ -104,6 +104,7 @@
             this.textName.Name = "textName";
             this.textName.Size = new System.Drawing.Size(263, 31);
             this.textName.TabIndex = 2;
+            this.textName.Text = "FAHIM FAISAL";
             // 
             // textFather
             // 
@@ -114,6 +115,7 @@
             this.textFather.Name = "textFather";
             this.textFather.Size = new System.Drawing.Size(263, 31);
             this.textFather.TabIndex = 4;
+            this.textFather.Text = "RAFIQUL ISLAM";
             // 
             // textMother
             // 
@@ -124,6 +126,7 @@
             this.textMother.Name = "textMother";
             this.textMother.Size = new System.Drawing.Size(263, 31);
             this.textMother.TabIndex = 5;
+            this.textMother.Text = "FAHIMA KHATUN";
             // 
             // textContact
             // 
@@ -134,6 +137,7 @@
             this.textContact.Name = "textContact";
             this.textContact.Size = new System.Drawing.Size(263, 31);
             this.textContact.TabIndex = 6;
+            this.textContact.Text = "01960839343";
             this.textContact.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textContact_KeyPress);
             // 
             // comboClass
@@ -147,6 +151,7 @@
             this.comboClass.Name = "comboClass";
             this.comboClass.Size = new System.Drawing.Size(263, 33);
             this.comboClass.TabIndex = 3;
+            this.comboClass.Text = "Ten";
             // 
             // groupBox1
             // 
@@ -331,6 +336,7 @@
             this.textAddress.Name = "textAddress";
             this.textAddress.Size = new System.Drawing.Size(263, 90);
             this.textAddress.TabIndex = 12;
+            this.textAddress.Text = "Haluaghat";
             // 
             // label10
             // 
@@ -345,7 +351,7 @@
             // 
             // profileImage
             // 
-            this.profileImage.Image = ((System.Drawing.Image)(resources.GetObject("profileImage.Image")));
+            this.profileImage.BackColor = System.Drawing.Color.Teal;
             this.profileImage.Location = new System.Drawing.Point(558, 26);
             this.profileImage.Name = "profileImage";
             this.profileImage.Size = new System.Drawing.Size(180, 200);
@@ -391,7 +397,7 @@
             this.Controls.Add(this.textName);
             this.Controls.Add(this.textRoll);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnAddStudent);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddStudents";
@@ -407,7 +413,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAddStudent;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textRoll;
         private System.Windows.Forms.TextBox textName;

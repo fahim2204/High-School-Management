@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,10 +16,13 @@ namespace High_School_Management
     public partial class AddStudents : Form
     {
         SqlConnection conn = new SqlConnection(@"Server=.\SQLEXPRESS;Database=school;Integrated Security=true");
+        string imgurl = "Default.jpg";
+        Home h;
 
-        public AddStudents()
+        public AddStudents(Home h)
         {
             InitializeComponent();
+            this.h = h;
         }
 
         private void dateAdmit_ValueChanged(object sender, EventArgs e)
@@ -33,25 +38,20 @@ namespace High_School_Management
 
         
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnAddStudent_Click(object sender, EventArgs e)
         {
             conn.Open();
-            string query = "INSERT INTO [students] (Roll,Name,class,father,mother,contact,gender,dob,admissionDate,address) VALUES(" + textRoll.Text + ",'" + textName.Text + "','" + comboClass.Text + "','" + textFather.Text + "','" + textMother.Text + "'," + textContact.Text + ",'" + RadioValue + "','" + dateDob.Value.Date.ToString("yyyyMMdd") + "','" + dateAdmit.Value.Date.ToString("yyyyMMdd") + "','" + textAddress.Text + "')";
+            string query = "INSERT INTO [students] (Roll,Name,fk_class_id,father,mother,contact,gender,dob,admissionDate,address,photo) VALUES(" + textRoll.Text + ",'" + textName.Text + "',(select [class_id] from [class] where class_name = '" + comboClass.Text + "'),'" + textFather.Text + "','" + textMother.Text + "'," + textContact.Text + ",'" + RadioValue + "','" + dateDob.Value.Date.ToString("yyyyMMdd") + "','" + dateAdmit.Value.Date.ToString("yyyyMMdd") + "','" + textAddress.Text + "','" + imgurl + "')";
             SqlCommand cmd = new SqlCommand(query, conn);
             
            try
-             {
-                 int result = cmd.ExecuteNonQuery();
-                 if (result > 0)
-                 {
+            {
+              int result = cmd.ExecuteNonQuery();
+              if (result > 0)
                      MessageBox.Show("Successfully added!!!", "Succesfull");
-                 }
-                 else
-                 {
-                     MessageBox.Show("error!!!", "Error");
-                 }
              }
-             catch { MessageBox.Show("Please Fillup Correctly!!", "Error"); }
+             catch(Exception ex) { MessageBox.Show(ex.Message.ToString(), "Error"); }
+            h.RefreshStudentTable();
             conn.Close();
         }
 
@@ -79,14 +79,16 @@ namespace High_School_Management
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog fd1 = new OpenFileDialog();
-            fd1.Filter = "image files|*.jpg;*.png;*.gif;*.icon;.*;";
+            fd1.Filter = "image files|*.jpg;*.jpeg;*.png;*.gif;*.icon;";
             DialogResult dres1 = fd1.ShowDialog();
             if (dres1 == DialogResult.Abort)
                 return;
             if (dres1 == DialogResult.Cancel)
                 return;
-            //textBox4.Text = fd1.FileName;
             profileImage.Image = Image.FromFile(fd1.FileName);
+            Image img = Image.FromFile(fd1.FileName);
+            imgurl = "img_" + textName.Text + "_" + comboClass.Text + "_" + textRoll.Text + ".jpg";
+            img.Save(@"..\..\StudentImages\"+imgurl);
         }
 
         private void AddStudents_Load(object sender, EventArgs e)
@@ -123,7 +125,8 @@ namespace High_School_Management
             dateDob.Value = new DateTime(2000, 01, 01);
             dateAdmit.Value = DateTime.Today;
             textAddress.Text = "";
-
+            profileImage.Image = Image.FromFile(@"..\..\StudentImages\default.jpg");
         }
+
     }
 }

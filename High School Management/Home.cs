@@ -92,7 +92,7 @@ namespace High_School_Management
             RefreshUserTable();
         }
 
-        void RefreshStudentTable()
+        public void RefreshStudentTable()
         {
             SqlConnection conn = new SqlConnection(@"Server=.\SQLEXPRESS;Database=school;Integrated Security=true");
             conn.Open();
@@ -103,7 +103,7 @@ namespace High_School_Management
             dataGridViewStudent.DataSource = dt;
             conn.Close();
         }
-        void RefreshUserTable()
+        public void RefreshUserTable()
         {
             conn.Open();
             //SqlCommand cmd = new SqlCommand("SELECT * FROM [Users]", conn);
@@ -113,7 +113,7 @@ namespace High_School_Management
             dataGridViewUser.DataSource = dt;
             conn.Close();
         }
-        void RefreshSubjectTable(string st)
+        public void RefreshSubjectTable(string st)
         {
             string connString;  
             if (st == "All")
@@ -182,7 +182,7 @@ namespace High_School_Management
 
         private void button13_Click(object sender, EventArgs e)
         {
-            new AddStudents().Show();
+            new AddStudents(this).Show();
         }
 
         private void button18_Click(object sender, EventArgs e)
@@ -271,6 +271,11 @@ namespace High_School_Management
         private void comboBoxClass2_MouseLeave(object sender, EventArgs e)
         {
 
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            new EditStudent(dataGridViewStudent.CurrentRow.Cells[0].Value.ToString()).Visible = true;
         }
     }
     

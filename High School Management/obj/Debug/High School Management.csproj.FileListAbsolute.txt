@@ -9,10 +9,8 @@ C:\Users\Fahim\source\repos\High School Management\High School Management\obj\De
 C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High School Management.pdb
 C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High School Management.csprojAssemblyReference.cache
 C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High_School_Management.Home.resources
-C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High_School_Management.Student.resources
-C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High_School_Management.Results.resources
-C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High_School_Management.Users.resources
 C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High_School_Management.AddUsers.resources
 C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High_School_Management.AddStudents.resources
 C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High_School_Management.AddSubject.resources
 C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High_School_Management.AssignSubject.resources
+C:\Users\Fahim\source\repos\High School Management\High School Management\obj\Debug\High_School_Management.EditStudent.resources
