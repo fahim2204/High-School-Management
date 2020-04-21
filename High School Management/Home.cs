@@ -77,6 +77,7 @@ namespace High_School_Management
             panelTeacher.Visible = true;
             button6.Enabled = false;
             button6.BackColor = System.Drawing.Color.DodgerBlue;
+            RefreshTeacherTable();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -98,13 +99,22 @@ namespace High_School_Management
 
         public void RefreshStudentTable()
         {
-            SqlConnection conn = new SqlConnection(@"Server=.\SQLEXPRESS;Database=school;Integrated Security=true");
             conn.Open();
             //SqlCommand cmd = new SqlCommand("SELECT * FROM [Users]", conn);
             SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [viewAllStudent]", conn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dataGridViewStudent.DataSource = dt;
+            conn.Close();
+        }
+        public void RefreshTeacherTable()
+        {
+            conn.Open();
+            //SqlCommand cmd = new SqlCommand("SELECT * FROM [Users]", conn);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [viewAllTeacher]", conn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridViewTeacher.DataSource = dt;
             conn.Close();
         }
         public void RefreshUserTable()
@@ -285,6 +295,11 @@ namespace High_School_Management
         private void button9_Click(object sender, EventArgs e)
         {
             new EditUser(dataGridViewUser.CurrentRow.Cells[0].Value.ToString(), this).Visible = true;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            new AddTeacher(this).Visible = true;
         }
     }
     

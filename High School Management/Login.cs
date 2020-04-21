@@ -23,17 +23,59 @@ namespace High_School_Management
 
             SqlConnection conn = new SqlConnection(@"Server=.\SQLEXPRESS;Database=school;Integrated Security=true");
             conn.Open();
-            SqlCommand cmd = new SqlCommand("SELECT name,Username,password FROM [Users] WHERE Username = '" + textUsername.Text + "' AND Password = '" + textPassword.Text + "'", conn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM [Users] WHERE Username = '" + textUsername.Text + "' AND Password = '" + textPassword.Text + "'", conn);
             SqlDataReader da = cmd.ExecuteReader();
 
-            if (da.Read())
+            if (textUsername.Text == "" && textPassword.Text == "")
+                MessageBox.Show("Must Have A UserName & Password!!!", "Error");
+            else if(textUsername.Text=="")
+                MessageBox.Show("Must Have A UserName!!!", "Error");
+            else if (textPassword.Text == "")
+                MessageBox.Show("Must Have A Password!!!", "Error");
+
+            else if (da.Read())
             {
-                Home h = new Home(da["name"].ToString());
-               h.Show();
+                if(da["type"].ToString()=="admin")
+                {
+                    bool IsOpen = false;
+                    foreach(Form f in Application.OpenForms)
+                    {
+                        if(f.Text=="Home")
+                        {
+                            IsOpen = true;
+                            f.BringToFront();
+                            break;
+                        }
+                    }
+
+                    if (!IsOpen)
+                    {
+                        Home h = new Home(da["name"].ToString());
+                        h.Show();
+                    }
+
+                }
+                else if (da["type"].ToString() == "teacher")
+                {
+                    TeacherHome h = new TeacherHome(da["name"].ToString());
+                    h.Show();
+
+                }
+                else if (da["type"].ToString() == "student")
+                {
+                    Home h = new Home(da["name"].ToString());
+                    h.Show();
+
+                }
+                else
+                {
+                    MessageBox.Show("Something Went Wrong!!!", "Error");
+                }
+
             }
             else
             {
-                MessageBox.Show("Wrong Password", "Failed");
+                MessageBox.Show("Wrong Password or Username", "Failed");
             }
 
             conn.Close();

@@ -40,3 +40,5 @@ F:\Project\C#\High-School-Management\High School Management\obj\Debug\High Schoo
 F:\Project\C#\High-School-Management\High School Management\obj\Debug\High School Management.application
 F:\Project\C#\High-School-Management\High School Management\obj\Debug\High School Management.exe
 F:\Project\C#\High-School-Management\High School Management\obj\Debug\High School Management.pdb
+F:\Project\C#\High-School-Management\High School Management\obj\Debug\High_School_Management.TeacherHome.resources
+F:\Project\C#\High-School-Management\High School Management\obj\Debug\High_School_Management.AddTeacher.resources
