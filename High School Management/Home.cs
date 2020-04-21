@@ -301,6 +301,11 @@ namespace High_School_Management
         {
             new AddTeacher(this).Visible = true;
         }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            new AssignTeacher().Visible = true;
+        }
     }
     
 }
