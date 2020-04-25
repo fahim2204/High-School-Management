@@ -39,7 +39,7 @@
             // 
             this.btnAddUser.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnAddUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.btnAddUser.Location = new System.Drawing.Point(187, 239);
+            this.btnAddUser.Location = new System.Drawing.Point(182, 239);
             this.btnAddUser.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(170, 75);
@@ -52,7 +52,7 @@
             // 
             this.textSubName.BackColor = System.Drawing.SystemColors.HighlightText;
             this.textSubName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.textSubName.Location = new System.Drawing.Point(234, 164);
+            this.textSubName.Location = new System.Drawing.Point(229, 164);
             this.textSubName.Margin = new System.Windows.Forms.Padding(2);
             this.textSubName.Name = "textSubName";
             this.textSubName.Size = new System.Drawing.Size(190, 30);
@@ -62,7 +62,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label2.Location = new System.Drawing.Point(84, 164);
+            this.label2.Location = new System.Drawing.Point(79, 164);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 25);
@@ -73,7 +73,7 @@
             // 
             this.textSubID.BackColor = System.Drawing.SystemColors.HighlightText;
             this.textSubID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.textSubID.Location = new System.Drawing.Point(234, 71);
+            this.textSubID.Location = new System.Drawing.Point(229, 71);
             this.textSubID.Margin = new System.Windows.Forms.Padding(2);
             this.textSubID.Name = "textSubID";
             this.textSubID.Size = new System.Drawing.Size(190, 30);
@@ -83,7 +83,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label1.Location = new System.Drawing.Point(117, 71);
+            this.label1.Location = new System.Drawing.Point(112, 71);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 25);
@@ -94,7 +94,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 348);
+            this.ClientSize = new System.Drawing.Size(533, 348);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.textSubName);
             this.Controls.Add(this.label2);

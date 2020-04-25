@@ -43,7 +43,7 @@
             this.btnAddUser.Location = new System.Drawing.Point(93, 301);
             this.btnAddUser.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(112, 75);
+            this.btnAddUser.Size = new System.Drawing.Size(112, 58);
             this.btnAddUser.TabIndex = 22;
             this.btnAddUser.Text = "Delete";
             this.btnAddUser.UseVisualStyleBackColor = false;
@@ -98,7 +98,7 @@
             this.button1.Location = new System.Drawing.Point(287, 301);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 75);
+            this.button1.Size = new System.Drawing.Size(112, 58);
             this.button1.TabIndex = 25;
             this.button1.Text = "Update";
             this.button1.UseVisualStyleBackColor = false;
@@ -108,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 413);
+            this.ClientSize = new System.Drawing.Size(496, 387);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.textSubName);

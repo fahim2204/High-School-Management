@@ -46,7 +46,7 @@
             this.textUsername.Name = "textUsername";
             this.textUsername.Size = new System.Drawing.Size(299, 47);
             this.textUsername.TabIndex = 0;
-            this.textUsername.Text = "fahim";
+            this.textUsername.Text = "nazrul";
             // 
             // textPassword
             // 

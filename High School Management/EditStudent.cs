@@ -26,6 +26,61 @@ namespace High_School_Management
             this.h = h;
             LoadData();
         }
+        public EditStudent(string stID)
+        {
+            InitializeComponent();
+            this.stID = stID;
+            LoadDataReadOnly();
+        }
+        void LoadDataReadOnly()
+        {
+
+            conn.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("select * from viewAllStudent where [ID] = '" + stID + "'", conn);
+            SqlDataAdapter sda2 = new SqlDataAdapter("select photo from students where [st_id] = '" + stID + "'", conn);
+
+            DataTable dt = new DataTable();
+            DataTable dt2 = new DataTable();
+
+            sda.Fill(dt);
+            sda2.Fill(dt2);
+
+
+            DataSet ds = new DataSet();
+            SqlDataAdapter sda1 = new SqlDataAdapter("SELECT [class_name] FROM [class]", conn);
+            sda1.Fill(ds);
+            this.comboClass.DataSource = ds.Tables[0];
+            this.comboClass.DisplayMember = "class_name";
+            comboClass.BindingContext = this.BindingContext;
+
+
+            try
+            {
+                textRoll.Text = dt.Rows[0][3].ToString();
+                textName.Text = dt.Rows[0][1].ToString();
+                //comboClass.SelectedText = dt.Rows[0][2].ToString();
+                //comboClass.SelectedIndex = dt.Rows[0][2].ToString();
+                comboClass.Text = dt.Rows[0][2].ToString();
+                textFather.Text = dt.Rows[0][5].ToString();
+                textMother.Text = dt.Rows[0][6].ToString();
+                textContact.Text = dt.Rows[0][7].ToString();
+                if (dt.Rows[0][4].ToString() == "Male")
+                    radioMale.Checked = true;
+                else
+                    radioFemale.Checked = true;
+                dateDob.Value = Convert.ToDateTime(dt.Rows[0][8].ToString());
+                dateAdmit.Value = Convert.ToDateTime(dt.Rows[0][9].ToString());
+                textAddress.Text = dt.Rows[0][10].ToString();
+                profileImage.Image = Image.FromFile(@"..\..\StudentImages\" + dt2.Rows[0][0].ToString());
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message.ToString(), "Error"); }
+
+            conn.Close();
+            button1.Visible = false;
+            button2.Visible = false;
+            button3.Visible = false;
+
+        }
         void LoadData()
         {
 

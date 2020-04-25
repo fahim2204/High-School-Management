@@ -25,17 +25,20 @@ namespace High_School_Management
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("delete from [users] where id = " + Uid + "", conn);
-            try
+            if (MessageBox.Show("Are you sure want to delete this record ?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                int result = cmd.ExecuteNonQuery();
-                if (result > 0)
-                    MessageBox.Show("Deleted Successful!!!", "Succesfull");
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("delete from [users] where id = " + Uid + "", conn);
+                try
+                {
+                    int result = cmd.ExecuteNonQuery();
+                    if (result > 0)
+                        MessageBox.Show("Deleted Successful!!!", "Succesfull");
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message.ToString(), "Error"); }
+                conn.Close();
+                h.RefreshUserTable();
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message.ToString(), "Error"); }
-            conn.Close();
-            h.RefreshUserTable();
         }
 
         private void EditUser_Load(object sender, EventArgs e)
