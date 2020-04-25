@@ -229,7 +229,7 @@ namespace High_School_Management
 
         private void button20_Click(object sender, EventArgs e)
         {
-            new AddSubject().Show();
+            new AddSubject(this).Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -305,6 +305,16 @@ namespace High_School_Management
         private void button19_Click(object sender, EventArgs e)
         {
             new AssignTeacher().Visible = true;
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            new EditSubject(dataGridViewSubject.CurrentRow.Cells[0].Value.ToString(), this).Visible = true;
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            new DeleteClassAssign().Visible = true;
         }
     }
     

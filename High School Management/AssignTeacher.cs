@@ -68,17 +68,41 @@ namespace High_School_Management
             conn.Close();
 
         }
-
-        private void comboTName_SelectionChangeCommitted(object sender, EventArgs e)
+        void RefreshTable()
         {
             conn.Open();
-            SqlDataAdapter sda = new SqlDataAdapter("select [Class Name],[Subject Name] from viewAssignedTeacher where [Name] = '" + comboTName.Text + "'", conn);
+            SqlDataAdapter sda = new SqlDataAdapter("select [Class Name],[Subject Name] from viewAssignedTeacher where [Name] = '" + comboTName.GetItemText(comboTName.SelectedItem) + "'", conn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
 
             dataGridViewTeacher.DataSource = dt;
 
             conn.Close();
+        }
+
+        private void comboTName_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            RefreshTable();
+        }
+
+        private void btnAssignSub_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand("INSERT INTO [teacher_subject] (id,fk_class_id,fk_subject_id) VALUES((select t_id from teacher where Name = '" + comboTName.GetItemText(comboTName.SelectedItem) + "'),(select class_id from class where class_name = '" + comboClass.GetItemText(comboClass.SelectedItem) + "'),(select subject_id from subject where subject_name = '" + comboSubject.GetItemText(comboSubject.SelectedItem) + "'))", conn);
+
+            try
+            {
+                int result = cmd.ExecuteNonQuery();
+                if (result > 0)
+                {
+                    MessageBox.Show("Assign Success!!!", "Succesfull");
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message.ToString(), "Error"); }
+            conn.Close();
+            RefreshTable();
+
         }
     }
 }

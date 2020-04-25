@@ -110,11 +110,23 @@
     <Compile Include="AssignTeacher.Designer.cs">
       <DependentUpon>AssignTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeleteClassAssign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteClassAssign.Designer.cs">
+      <DependentUpon>DeleteClassAssign.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditStudent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditStudent.Designer.cs">
       <DependentUpon>EditStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditSubject.Designer.cs">
+      <DependentUpon>EditSubject.cs</DependentUpon>
     </Compile>
     <Compile Include="EditUser.cs">
       <SubType>Form</SubType>
@@ -160,8 +172,14 @@
     <EmbeddedResource Include="AssignTeacher.resx">
       <DependentUpon>AssignTeacher.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DeleteClassAssign.resx">
+      <DependentUpon>DeleteClassAssign.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditStudent.resx">
       <DependentUpon>EditStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditSubject.resx">
+      <DependentUpon>EditSubject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditUser.resx">
       <DependentUpon>EditUser.cs</DependentUpon>

@@ -43,3 +43,5 @@ F:\Project\C#\High-School-Management\High School Management\obj\Debug\High Schoo
 F:\Project\C#\High-School-Management\High School Management\obj\Debug\High_School_Management.TeacherHome.resources
 F:\Project\C#\High-School-Management\High School Management\obj\Debug\High_School_Management.AddTeacher.resources
 F:\Project\C#\High-School-Management\High School Management\obj\Debug\High_School_Management.AssignTeacher.resources
+F:\Project\C#\High-School-Management\High School Management\obj\Debug\High_School_Management.EditSubject.resources
+F:\Project\C#\High-School-Management\High School Management\obj\Debug\High_School_Management.EditClassAssign.resources

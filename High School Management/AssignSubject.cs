@@ -53,36 +53,33 @@ namespace High_School_Management
 
         private void btnAssignSub_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(@"Server=.\SQLEXPRESS;Database=school;Integrated Security=true");
             conn.Open();
 
             SqlCommand cmd = new SqlCommand("INSERT INTO [subject_enrolment] (fk_class_id,fk_subject_id) VALUES((select class_id from class where class_name = '" + comboBoxClassAssign.GetItemText(comboBoxClassAssign.SelectedItem) + "'),(select subject_id from subject where subject_name = '" + comboBoxSubAssign.GetItemText(comboBoxSubAssign.SelectedItem) + "'))", conn);
 
             try
             {
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.Read())
-                {
-                    if (comboBoxClassAssign.Text != null && comboBoxSubAssign.Text != null)
-                        MessageBox.Show("Successfully added!!!", "Succesfull");
-                    else
-                        MessageBox.Show("Please Fill All The Field!!!", "Incomplete");
-                }
-                else
-                {
-                    MessageBox.Show("error!!!", "Error");
-                }
+                int result = cmd.ExecuteNonQuery();
+                if (result > 0)
+                    MessageBox.Show("Assign Success!!!", "Succesfull");
             }
             catch (Exception ex) { MessageBox.Show(ex.Message.ToString(), "Error"); }
+
             conn.Close();
+            ListRefresh();
+
         }
 
         private void comboBoxClassAssign_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            ListRefresh();    
+        }
+        void ListRefresh()
+        {
             conn.Open();
 
             DataSet ds = new DataSet();
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT [assigned subject] FROM [viewAllClass] where [class name] = '"+ comboBoxClassAssign.GetItemText(comboBoxClassAssign.SelectedItem) + "' ", conn);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT [assigned subject] FROM [viewAllClass] where [class name] = '" + comboBoxClassAssign.GetItemText(comboBoxClassAssign.SelectedItem) + "' ", conn);
             sda.Fill(ds);
             this.listAssignedClass.DataSource = ds.Tables[0];
             this.listAssignedClass.DisplayMember = "assigned subject";
@@ -109,6 +106,7 @@ namespace High_School_Management
             // listAssignedClass.DisplayMember = "assigned class";
             //listAssignedClass.DataSource = dt.Tables[0];
             conn.Close();
+
         }
     }
 }

@@ -120,20 +120,23 @@ namespace High_School_Management
 
         private void button2_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("delete from [students] where st_id = " + stID + "", conn);
-            try
+            if (MessageBox.Show("Are you sure want to delete this record ?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                int result = cmd.ExecuteNonQuery();
-                if (result > 0)
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("delete from [students] where st_id = " + stID + "", conn);
+                try
                 {
-                    MessageBox.Show("Deleted Successfully!!!", "Succesfull");
-                    this.Dispose();
+                    int result = cmd.ExecuteNonQuery();
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Deleted Successfully!!!", "Succesfull");
+                        this.Dispose();
+                    }
                 }
+                catch (Exception ex) { MessageBox.Show(ex.Message.ToString(), "Error"); }
+                conn.Close();
+                h.RefreshStudentTable();
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message.ToString(), "Error"); }
-            conn.Close();
-            h.RefreshStudentTable();
         }
     }
 }

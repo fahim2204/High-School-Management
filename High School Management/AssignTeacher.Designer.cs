@@ -165,6 +165,7 @@
             this.btnAssignSub.TabIndex = 51;
             this.btnAssignSub.Text = "Assign Subject";
             this.btnAssignSub.UseVisualStyleBackColor = false;
+            this.btnAssignSub.Click += new System.EventHandler(this.btnAssignSub_Click);
             // 
             // AssignTeacher
             // 
