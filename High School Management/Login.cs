@@ -94,5 +94,13 @@ namespace High_School_Management
                 LoginFun();
             }
         }
+
+        private void textUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Return)
+            {
+                LoginFun();
+            }
+        }
     }
 }

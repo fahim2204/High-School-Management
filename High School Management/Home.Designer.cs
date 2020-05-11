@@ -80,6 +80,7 @@
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.panelSubject = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.dataGridViewSubject = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.textSubSearch = new System.Windows.Forms.TextBox();
@@ -92,8 +93,21 @@
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxClass2 = new System.Windows.Forms.ComboBox();
             this.button22 = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
+            this.panelHome = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.TEmployee = new System.Windows.Forms.Label();
+            this.TTeacher = new System.Windows.Forms.Label();
+            this.TClass = new System.Windows.Forms.Label();
+            this.TSubject = new System.Windows.Forms.Label();
+            this.TStudent = new System.Windows.Forms.Label();
+            this.TUser = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.welcome = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelTeacher.SuspendLayout();
@@ -108,11 +122,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSubject)).BeginInit();
             this.panelClass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClass)).BeginInit();
+            this.panelHome.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(97)))), ((int)(((byte)(141)))));
             this.panelMenu.Controls.Add(this.button18);
             this.panelMenu.Controls.Add(this.button8);
             this.panelMenu.Controls.Add(this.button3);
@@ -131,7 +146,7 @@
             // 
             // button18
             // 
-            this.button18.BackColor = System.Drawing.Color.AliceBlue;
+            this.button18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button18.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button18.FlatAppearance.BorderSize = 0;
@@ -149,7 +164,7 @@
             // 
             // button8
             // 
-            this.button8.BackColor = System.Drawing.Color.AliceBlue;
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button8.FlatAppearance.BorderSize = 0;
@@ -167,7 +182,7 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.AliceBlue;
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button3.FlatAppearance.BorderSize = 0;
@@ -186,7 +201,7 @@
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.Color.AliceBlue;
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button7.FlatAppearance.BorderSize = 0;
@@ -204,7 +219,7 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.AliceBlue;
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button4.FlatAppearance.BorderSize = 0;
@@ -222,7 +237,7 @@
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.AliceBlue;
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button6.FlatAppearance.BorderSize = 0;
@@ -240,7 +255,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.AliceBlue;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button2.FlatAppearance.BorderSize = 0;
@@ -258,7 +273,7 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.AliceBlue;
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button5.FlatAppearance.BorderSize = 0;
@@ -277,7 +292,7 @@
             // button1
             // 
             this.button1.AutoEllipsis = true;
-            this.button1.BackColor = System.Drawing.Color.AliceBlue;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button1.FlatAppearance.BorderSize = 0;
@@ -309,6 +324,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.SeaShell;
             this.label1.Location = new System.Drawing.Point(7, 104);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(192, 17);
@@ -317,7 +333,7 @@
             // 
             // panelTeacher
             // 
-            this.panelTeacher.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panelTeacher.BackColor = System.Drawing.Color.Transparent;
             this.panelTeacher.Controls.Add(this.button19);
             this.panelTeacher.Controls.Add(this.dataGridViewTeacher);
             this.panelTeacher.Controls.Add(this.button11);
@@ -348,7 +364,7 @@
             this.dataGridViewTeacher.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewTeacher.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewTeacher.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridViewTeacher.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.dataGridViewTeacher.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -405,10 +421,11 @@
             this.button12.TabIndex = 2;
             this.button12.Text = "View/Edit Details";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // panelUsers
             // 
-            this.panelUsers.BackColor = System.Drawing.Color.Teal;
+            this.panelUsers.BackColor = System.Drawing.Color.Transparent;
             this.panelUsers.Controls.Add(this.dataGridViewUser);
             this.panelUsers.Controls.Add(this.button10);
             this.panelUsers.Controls.Add(this.button9);
@@ -427,8 +444,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewUser.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewUser.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
+            this.dataGridViewUser.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -438,24 +456,25 @@
             this.dataGridViewUser.ColumnHeadersHeight = 30;
             this.dataGridViewUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewUser.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewUser.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridViewUser.Location = new System.Drawing.Point(39, 196);
+            this.dataGridViewUser.Location = new System.Drawing.Point(23, 196);
             this.dataGridViewUser.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewUser.Name = "dataGridViewUser";
             this.dataGridViewUser.ReadOnly = true;
+            this.dataGridViewUser.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewUser.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewUser.RowHeadersVisible = false;
@@ -464,7 +483,7 @@
             this.dataGridViewUser.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridViewUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewUser.ShowEditingIcon = false;
-            this.dataGridViewUser.Size = new System.Drawing.Size(816, 441);
+            this.dataGridViewUser.Size = new System.Drawing.Size(833, 441);
             this.dataGridViewUser.TabIndex = 1;
             // 
             // button10
@@ -504,6 +523,7 @@
             // 
             // panelStudent
             // 
+            this.panelStudent.BackColor = System.Drawing.Color.Transparent;
             this.panelStudent.Controls.Add(this.dataGridViewStudent);
             this.panelStudent.Controls.Add(this.button13);
             this.panelStudent.Controls.Add(this.button14);
@@ -521,7 +541,7 @@
             this.dataGridViewStudent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewStudent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewStudent.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridViewStudent.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.dataGridViewStudent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
@@ -582,6 +602,7 @@
             // 
             // panelResult
             // 
+            this.panelResult.BackColor = System.Drawing.Color.Transparent;
             this.panelResult.Controls.Add(this.dataGridView4);
             this.panelResult.Controls.Add(this.label3);
             this.panelResult.Controls.Add(this.label2);
@@ -599,6 +620,7 @@
             // 
             // dataGridView4
             // 
+            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Location = new System.Drawing.Point(25, 237);
             this.dataGridView4.Margin = new System.Windows.Forms.Padding(2);
@@ -703,6 +725,7 @@
             // 
             // panelSubject
             // 
+            this.panelSubject.BackColor = System.Drawing.Color.Transparent;
             this.panelSubject.Controls.Add(this.label6);
             this.panelSubject.Controls.Add(this.dataGridViewSubject);
             this.panelSubject.Controls.Add(this.label5);
@@ -716,6 +739,17 @@
             this.panelSubject.TabIndex = 3;
             this.panelSubject.Visible = false;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label6.Location = new System.Drawing.Point(5, 30);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(194, 20);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Search By Subject Name :";
+            // 
             // dataGridViewSubject
             // 
             this.dataGridViewSubject.AllowUserToAddRows = false;
@@ -724,7 +758,7 @@
             this.dataGridViewSubject.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewSubject.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewSubject.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dataGridViewSubject.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.dataGridViewSubject.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -825,6 +859,7 @@
             // 
             // panelClass
             // 
+            this.panelClass.BackColor = System.Drawing.Color.Transparent;
             this.panelClass.Controls.Add(this.button23);
             this.panelClass.Controls.Add(this.dataGridViewClass);
             this.panelClass.Controls.Add(this.label4);
@@ -856,7 +891,7 @@
             this.dataGridViewClass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewClass.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewClass.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dataGridViewClass.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.dataGridViewClass.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -933,40 +968,224 @@
             this.button22.UseVisualStyleBackColor = true;
             this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
+            // btnLogOut
+            // 
+            this.btnLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogOut.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogOut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogOut.BackgroundImage")));
+            this.btnLogOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Location = new System.Drawing.Point(1018, 11);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(0);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(50, 50);
+            this.btnLogOut.TabIndex = 3;
+            this.btnLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.button24_Click);
+            // 
+            // panelHome
+            // 
+            this.panelHome.BackColor = System.Drawing.Color.Transparent;
+            this.panelHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelHome.Controls.Add(this.label10);
+            this.panelHome.Controls.Add(this.label12);
+            this.panelHome.Controls.Add(this.label11);
+            this.panelHome.Controls.Add(this.label9);
+            this.panelHome.Controls.Add(this.label8);
+            this.panelHome.Controls.Add(this.TEmployee);
+            this.panelHome.Controls.Add(this.TTeacher);
+            this.panelHome.Controls.Add(this.TClass);
+            this.panelHome.Controls.Add(this.TSubject);
+            this.panelHome.Controls.Add(this.TStudent);
+            this.panelHome.Controls.Add(this.TUser);
+            this.panelHome.Controls.Add(this.label7);
+            this.panelHome.Controls.Add(this.welcome);
+            this.panelHome.Font = new System.Drawing.Font("Ravie", 40F);
+            this.panelHome.Location = new System.Drawing.Point(205, 0);
+            this.panelHome.Name = "panelHome";
+            this.panelHome.Size = new System.Drawing.Size(895, 700);
+            this.panelHome.TabIndex = 6;
+            this.panelHome.Visible = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Palatino Linotype", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.label10.Location = new System.Drawing.Point(583, 189);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(235, 45);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Total Subjects :";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Palatino Linotype", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(140)))), ((int)(((byte)(141)))));
+            this.label12.Location = new System.Drawing.Point(583, 371);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(263, 45);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "Total Employee :";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Palatino Linotype", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(141)))), ((int)(((byte)(117)))));
+            this.label11.Location = new System.Drawing.Point(48, 371);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(193, 45);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Total Class :";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Palatino Linotype", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(111)))), ((int)(((byte)(30)))));
+            this.label9.Location = new System.Drawing.Point(288, 371);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(232, 45);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Total Teacher :";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Palatino Linotype", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
+            this.label8.Location = new System.Drawing.Point(288, 189);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(244, 45);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Total Students :";
+            // 
+            // TEmployee
+            // 
+            this.TEmployee.AutoSize = true;
+            this.TEmployee.BackColor = System.Drawing.Color.Transparent;
+            this.TEmployee.Font = new System.Drawing.Font("Ravie", 40F);
+            this.TEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(140)))), ((int)(((byte)(141)))));
+            this.TEmployee.Location = new System.Drawing.Point(648, 453);
+            this.TEmployee.Name = "TEmployee";
+            this.TEmployee.Size = new System.Drawing.Size(72, 73);
+            this.TEmployee.TabIndex = 8;
+            this.TEmployee.Text = "0";
+            // 
+            // TTeacher
+            // 
+            this.TTeacher.AutoSize = true;
+            this.TTeacher.BackColor = System.Drawing.Color.Transparent;
+            this.TTeacher.Font = new System.Drawing.Font("Ravie", 40F);
+            this.TTeacher.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(111)))), ((int)(((byte)(30)))));
+            this.TTeacher.Location = new System.Drawing.Point(364, 453);
+            this.TTeacher.Name = "TTeacher";
+            this.TTeacher.Size = new System.Drawing.Size(72, 73);
+            this.TTeacher.TabIndex = 9;
+            this.TTeacher.Text = "0";
+            // 
+            // TClass
+            // 
+            this.TClass.AutoSize = true;
+            this.TClass.BackColor = System.Drawing.Color.Transparent;
+            this.TClass.Font = new System.Drawing.Font("Ravie", 40F);
+            this.TClass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(141)))), ((int)(((byte)(117)))));
+            this.TClass.Location = new System.Drawing.Point(98, 453);
+            this.TClass.Name = "TClass";
+            this.TClass.Size = new System.Drawing.Size(72, 73);
+            this.TClass.TabIndex = 10;
+            this.TClass.Text = "0";
+            // 
+            // TSubject
+            // 
+            this.TSubject.AutoSize = true;
+            this.TSubject.BackColor = System.Drawing.Color.Transparent;
+            this.TSubject.Font = new System.Drawing.Font("Ravie", 40F);
+            this.TSubject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.TSubject.Location = new System.Drawing.Point(648, 250);
+            this.TSubject.Name = "TSubject";
+            this.TSubject.Size = new System.Drawing.Size(72, 73);
+            this.TSubject.TabIndex = 11;
+            this.TSubject.Text = "0";
+            // 
+            // TStudent
+            // 
+            this.TStudent.AutoSize = true;
+            this.TStudent.BackColor = System.Drawing.Color.Transparent;
+            this.TStudent.Font = new System.Drawing.Font("Ravie", 40F);
+            this.TStudent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
+            this.TStudent.Location = new System.Drawing.Point(364, 250);
+            this.TStudent.Name = "TStudent";
+            this.TStudent.Size = new System.Drawing.Size(72, 73);
+            this.TStudent.TabIndex = 12;
+            this.TStudent.Text = "0";
+            // 
+            // TUser
+            // 
+            this.TUser.AutoSize = true;
+            this.TUser.BackColor = System.Drawing.Color.Transparent;
+            this.TUser.Font = new System.Drawing.Font("Ravie", 40F);
+            this.TUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.TUser.Location = new System.Drawing.Point(98, 250);
+            this.TUser.Name = "TUser";
+            this.TUser.Size = new System.Drawing.Size(72, 73);
+            this.TUser.TabIndex = 13;
+            this.TUser.Text = "0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Palatino Linotype", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.label7.Location = new System.Drawing.Point(48, 189);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(187, 45);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Total User :";
+            // 
             // welcome
             // 
             this.welcome.AutoSize = true;
-            this.welcome.Font = new System.Drawing.Font("Palatino Linotype", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcome.Location = new System.Drawing.Point(436, 11);
+            this.welcome.BackColor = System.Drawing.Color.Transparent;
+            this.welcome.Font = new System.Drawing.Font("Rockwell Condensed", 40F);
+            this.welcome.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.welcome.Location = new System.Drawing.Point(221, 21);
             this.welcome.Name = "welcome";
-            this.welcome.Size = new System.Drawing.Size(105, 45);
-            this.welcome.TabIndex = 2;
+            this.welcome.Size = new System.Drawing.Size(130, 64);
+            this.welcome.TabIndex = 15;
             this.welcome.Text = "label6";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label6.Location = new System.Drawing.Point(5, 30);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(194, 20);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "Search By Subject Name :";
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(173)))), ((int)(((byte)(226)))));
             this.ClientSize = new System.Drawing.Size(1084, 661);
+            this.Controls.Add(this.btnLogOut);
+            this.Controls.Add(this.panelHome);
+            this.Controls.Add(this.panelUsers);
+            this.Controls.Add(this.panelTeacher);
+            this.Controls.Add(this.panelResult);
+            this.Controls.Add(this.panelStudent);
+            this.Controls.Add(this.panelClass);
             this.Controls.Add(this.panelSubject);
             this.Controls.Add(this.panelMenu);
-            this.Controls.Add(this.welcome);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
+            this.Load += new System.EventHandler(this.Home_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -985,8 +1204,9 @@
             this.panelClass.ResumeLayout(false);
             this.panelClass.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClass)).EndInit();
+            this.panelHome.ResumeLayout(false);
+            this.panelHome.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1038,10 +1258,24 @@
         private System.Windows.Forms.ComboBox comboBoxClass2;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Label welcome;
         private System.Windows.Forms.DataGridView dataGridViewTeacher;
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Panel panelHome;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label TEmployee;
+        private System.Windows.Forms.Label TTeacher;
+        private System.Windows.Forms.Label TClass;
+        private System.Windows.Forms.Label TSubject;
+        private System.Windows.Forms.Label TStudent;
+        private System.Windows.Forms.Label TUser;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label welcome;
     }
 }
 
@@ -1055,4 +1289,6 @@
             this.Controls.Add(this.panelUsers);
             this.Controls.Add(this.panelClass);
             this.Controls.Add(this.panelSubject);
+            this.Controls.Add(this.panelHome);
+
 */

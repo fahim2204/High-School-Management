@@ -1,12 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace High_School_Management
@@ -36,6 +32,7 @@ namespace High_School_Management
             HomePanels.Add(panelUsers);
             HomePanels.Add(panelSubject);
             HomePanels.Add(panelClass);
+            HomePanels.Add(panelHome);
 
 
             HomeButtons.Add(button1);
@@ -59,7 +56,8 @@ namespace High_School_Management
             foreach (var i in HomeButtons)
             {
                 i.Enabled = true;
-                i.BackColor = System.Drawing.Color.AliceBlue;
+                //i.BackColor = System.Drawing.Color.AliceBlue;
+                i.BackColor = System.Drawing.ColorTranslator.FromHtml("#3498DB");
             }
         }
 
@@ -246,15 +244,15 @@ namespace High_School_Management
         private void button8_Click(object sender, EventArgs e)
         {
             ResetAll();
-            //panelClass.Visible = true;
             button8.Enabled = false;
             button8.BackColor = System.Drawing.Color.DodgerBlue;
+            LoadHomePanel();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             ResetAll();
-            //panelClass.Visible = true;
+            panelHome.Visible = true;
             button1.Enabled = false;
             button1.BackColor = System.Drawing.Color.DodgerBlue;
         }
@@ -315,6 +313,74 @@ namespace High_School_Management
         private void button22_Click(object sender, EventArgs e)
         {
             new DeleteClassAssign().Visible = true;
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+            LoadHomePanel();
+            panelHome.Visible = true;
+            button1.Enabled = false;
+            button1.BackColor = System.Drawing.Color.DodgerBlue;
+        }
+        void LoadHomePanel()
+        {
+            conn.Open();
+
+            SqlCommand cmd1 = new SqlCommand("select count(*)[count] from [users]", conn);
+            SqlCommand cmd2 = new SqlCommand("select count(*)[count] from [students]", conn);
+            SqlCommand cmd3 = new SqlCommand("select count(*)[count] from [Subject]", conn);
+            SqlCommand cmd4 = new SqlCommand("select count(*)[count] from [class]", conn);
+            SqlCommand cmd5 = new SqlCommand("select count(*)[count] from [teacher]", conn);
+            SqlCommand cmd6 = new SqlCommand("select count(*)[count] from [users]", conn);
+
+            SqlDataReader dr1 = cmd1.ExecuteReader();
+            while (dr1.Read())
+                TUser.Text = dr1["count"].ToString();
+            dr1.Close();
+
+
+            SqlDataReader dr2 = cmd2.ExecuteReader();
+            while (dr2.Read())
+                TStudent.Text = dr2["count"].ToString();
+            dr2.Close();
+
+
+            SqlDataReader dr3 = cmd3.ExecuteReader();
+            while (dr3.Read())
+                TSubject.Text = dr3["count"].ToString();
+            dr3.Close();
+
+
+            SqlDataReader dr4 = cmd4.ExecuteReader();
+            while (dr4.Read())
+                TClass.Text = dr4["count"].ToString();
+            dr4.Close();
+
+
+            SqlDataReader dr5 = cmd5.ExecuteReader();
+            while (dr5.Read())
+                TTeacher.Text = dr5["count"].ToString();
+            dr5.Close();
+
+
+            SqlDataReader dr6 = cmd6.ExecuteReader();
+            while (dr6.Read())
+                TEmployee.Text = dr6["count"].ToString();
+            dr6.Close();
+
+
+
+            conn.Close();
         }
     }
     

@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace High_School_Management
@@ -79,6 +73,18 @@ namespace High_School_Management
             button1.Visible = false;
             button2.Visible = false;
             button3.Visible = false;
+
+            textRoll.Enabled = false;
+            textName.Enabled = false;
+            comboClass.Enabled = false;
+            textFather.Enabled = false;
+            textMother.Enabled = false;
+            textContact.Enabled = false;
+            radioMale.Enabled = false;
+            radioFemale.Enabled = false;
+            dateDob.Enabled = false;
+            dateAdmit.Enabled = false;
+            textAddress.Enabled = false;
 
         }
         void LoadData()
