@@ -410,6 +410,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
             this.Name = "EditStudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Student";
             ((System.ComponentModel.ISupportInitialize)(this.profileImage)).EndInit();
             this.groupBox1.ResumeLayout(false);

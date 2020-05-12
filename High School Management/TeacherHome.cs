@@ -25,8 +25,8 @@ namespace High_School_Management
         {
             HomePanels.Add(panelStudent);
             HomePanels.Add(panelAttendance);
-           // HomePanels.Add(panelResult);
-           // HomePanels.Add(panelUsers);
+            HomePanels.Add(panelTeacherHome);
+            HomePanels.Add(panelResult);
            // HomePanels.Add(panelSubject);
            // HomePanels.Add(panelClass);
 
@@ -52,18 +52,24 @@ namespace High_School_Management
             foreach (var i in HomeButtons)
             {
                 i.Enabled = true;
-                i.BackColor = System.Drawing.Color.AliceBlue;
+               // i.BackColor = System.Drawing.Color.AliceBlue;
+                i.BackColor = System.Drawing.ColorTranslator.FromHtml("#3498DB");
             }
         }
 
         private void TeacherHome_Load(object sender, EventArgs e)
         {
-
+            button1.Enabled = false;
+            panelTeacherHome.Visible = true;
+            button1.BackColor = System.Drawing.Color.DodgerBlue;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            ResetAll();
+            panelTeacherHome.Visible = true;
+            button1.Enabled = false;
+            button1.BackColor = System.Drawing.Color.DodgerBlue;
         }
         public void RefreshStudentTable()
         {
@@ -146,7 +152,8 @@ namespace High_School_Management
 
         private void dataGridViewStudent_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            new EditStudent(dataGridViewStudent.CurrentRow.Cells[0].Value.ToString()).Visible = true;
+            if (dataGridViewStudent.Columns[e.ColumnIndex].Name == "Details")
+                new EditStudent(dataGridViewStudent.CurrentRow.Cells[0].Value.ToString()).Visible = true;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -248,6 +255,120 @@ namespace High_School_Management
         private void dataGridAttendance_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            foreach (Form fm in Application.OpenForms)
+            {
+                if (fm.Name == "Login")
+                {
+                    fm.Visible = true;
+                }
+            }
+            this.Dispose();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ResetAll();
+            panelResult.Visible = true;
+            button2.Enabled = false;
+            button2.BackColor = System.Drawing.Color.DodgerBlue;
+        }
+
+        private void btnAddResult_Click(object sender, EventArgs e)
+        {
+            panelAddResult.Visible = true;
+            panelAddResult.BringToFront();
+
+            conn.Open();
+            SqlDataAdapter sda1 = new SqlDataAdapter("SELECT * FROM [exam] order by exam_id", conn);
+            DataTable dt1 = new DataTable();
+            sda1.Fill(dt1);
+            DataRow dr1 = dt1.NewRow();
+            dr1.ItemArray = new object[] { 0, "--Select Exam--" };
+            dt1.Rows.InsertAt(dr1, 0);
+            
+            comboExam.ValueMember = "exam_name";
+            comboExam.DisplayMember = "exam_name";
+            comboExam.DataSource = dt1;
+
+            conn.Close();
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            panelAddResult.Visible = false;
+        }
+
+        private void comboExam_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            comboClass.Enabled = true;
+
+            conn.Open();
+            SqlDataAdapter sda1 = new SqlDataAdapter("SELECT * FROM [class] order by class_id", conn);
+            DataTable dt1 = new DataTable();
+            sda1.Fill(dt1);
+            DataRow dr1 = dt1.NewRow();
+            dr1.ItemArray = new object[] { 0, "--Select Class--" };
+            dt1.Rows.InsertAt(dr1, 0);
+            comboClass.ValueMember = "class_name";
+            comboClass.DisplayMember = "class_name";
+            comboClass.DataSource = dt1;
+
+            conn.Close();
+        }
+
+        private void comboClass_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            dataGridViewStudentResult.Enabled = true;
+            comboSub.Enabled = true;
+
+            conn.Open();
+            SqlDataAdapter sda2 = new SqlDataAdapter("SELECT * FROM [subject] order by subject_name", conn);
+            DataTable dt2 = new DataTable();
+            sda2.Fill(dt2);
+            DataRow dr2 = dt2.NewRow();
+            dr2.ItemArray = new object[] { 0, "--Select Subject--" };
+            dt2.Rows.InsertAt(dr2, 0);
+            comboSub.ValueMember = "subject_name";
+            comboSub.DisplayMember = "subject_name";
+            comboSub.DataSource = dt2;
+            
+            conn.Close();
+
+
+            conn.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("select [Roll],[Name] from viewAllStudent where Class = '"+ comboClass.GetItemText(comboClass.SelectedItem) + "' order by Roll", conn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+           dataGridViewStudentResult.DataSource = dt;
+
+            conn.Close();
+            dataGridViewStudentResult.ClearSelection();
+        }
+
+        private void comboSub_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            textMark.Enabled = true;
+            textTotalMark.Enabled = true;
+            textMark.Text = "0";
+            textTotalMark.Text = "100";
+            btnResultAdd.Enabled = true;
+           // textTotalMark.Focus();
+        }
+
+        private void TeacherHome_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Do You Really Want To Exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            else
+                Environment.Exit(0);
         }
     }
 }

@@ -116,6 +116,7 @@
             this.Controls.Add(this.textSubID);
             this.Controls.Add(this.label1);
             this.Name = "EditSubject";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditSubject";
             this.Load += new System.EventHandler(this.EditSubject_Load);
             this.ResumeLayout(false);

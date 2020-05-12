@@ -129,6 +129,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "AssignSubject";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AssignSubject";
             this.Load += new System.EventHandler(this.AssignSubject_Load);
             this.ResumeLayout(false);

@@ -34,7 +34,7 @@ namespace High_School_Management
             HomePanels.Add(panelUsers);
             HomePanels.Add(panelSubject);
             HomePanels.Add(panelClass);
-            HomePanels.Add(panelHome);
+            HomePanels.Add(panelTeacherHome);
             HomePanels.Add(panelEmployee);
 
 
@@ -266,7 +266,7 @@ namespace High_School_Management
         private void button1_Click(object sender, EventArgs e)
         {
             ResetAll();
-            panelHome.Visible = true;
+            panelTeacherHome.Visible = true;
             button1.Enabled = false;
             button1.BackColor = System.Drawing.Color.DodgerBlue;
             LoadHomePanel();
@@ -346,11 +346,11 @@ namespace High_School_Management
         {
 
         }
-
+       
         private void Home_Load(object sender, EventArgs e)
         {
             LoadHomePanel();
-            panelHome.Visible = true;
+            panelTeacherHome.Visible = true;
             button1.Enabled = false;
             button1.BackColor = System.Drawing.Color.DodgerBlue;
         }
@@ -413,6 +413,19 @@ namespace High_School_Management
         private void button25_Click(object sender, EventArgs e)
         {
             new EditEmployee(dataGridViewEmployee.CurrentRow.Cells[0].Value.ToString(), this).Visible = true;
+        }
+
+        private void Home_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Do You Really Want To Exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            else
+                Environment.Exit(0);
+            //Application.ExitThread();
+            //e.Cancel = false;
+            //Close();
         }
     }
     

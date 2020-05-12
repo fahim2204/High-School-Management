@@ -34,6 +34,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.button18 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -43,7 +46,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.welcome = new System.Windows.Forms.Label();
             this.panelStudent = new System.Windows.Forms.Panel();
             this.textSearch = new System.Windows.Forms.TextBox();
             this.comboSearchType = new System.Windows.Forms.ComboBox();
@@ -58,19 +60,43 @@
             this.comboBoxClassAssign = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnLogOut = new System.Windows.Forms.Button();
+            this.panelTeacherHome = new System.Windows.Forms.Panel();
+            this.welcome = new System.Windows.Forms.Label();
+            this.panelResult = new System.Windows.Forms.Panel();
+            this.btnAddResult = new System.Windows.Forms.Button();
+            this.btnEditResult = new System.Windows.Forms.Button();
+            this.panelAddResult = new System.Windows.Forms.Panel();
+            this.btnResultAdd = new System.Windows.Forms.Button();
+            this.comboSub = new System.Windows.Forms.ComboBox();
+            this.comboExam = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboClass = new System.Windows.Forms.ComboBox();
+            this.textMark = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnCancelResult = new System.Windows.Forms.Button();
+            this.dataGridViewStudentResult = new System.Windows.Forms.DataGridView();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textTotalMark = new System.Windows.Forms.TextBox();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudent)).BeginInit();
             this.panelAttendance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAttendance)).BeginInit();
+            this.panelTeacherHome.SuspendLayout();
+            this.panelResult.SuspendLayout();
+            this.panelAddResult.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudentResult)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
             this.panelMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.panelMenu.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(97)))), ((int)(((byte)(141)))));
             this.panelMenu.Controls.Add(this.button18);
             this.panelMenu.Controls.Add(this.button3);
             this.panelMenu.Controls.Add(this.button4);
@@ -79,14 +105,14 @@
             this.panelMenu.Controls.Add(this.button1);
             this.panelMenu.Controls.Add(this.pictureBox1);
             this.panelMenu.Controls.Add(this.label1);
-            this.panelMenu.Location = new System.Drawing.Point(3, 2);
+            this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(205, 596);
             this.panelMenu.TabIndex = 2;
             // 
             // button18
             // 
-            this.button18.BackColor = System.Drawing.Color.AliceBlue;
+            this.button18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button18.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button18.FlatAppearance.BorderSize = 0;
@@ -103,7 +129,7 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.AliceBlue;
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button3.FlatAppearance.BorderSize = 0;
@@ -122,7 +148,7 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.AliceBlue;
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button4.FlatAppearance.BorderSize = 0;
@@ -140,7 +166,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.AliceBlue;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button2.FlatAppearance.BorderSize = 0;
@@ -154,10 +180,11 @@
             this.button2.TabStop = false;
             this.button2.Text = "Results";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.AliceBlue;
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button5.FlatAppearance.BorderSize = 0;
@@ -175,7 +202,7 @@
             // button1
             // 
             this.button1.AutoEllipsis = true;
-            this.button1.BackColor = System.Drawing.Color.AliceBlue;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button1.FlatAppearance.BorderSize = 0;
@@ -207,21 +234,12 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.SeaShell;
             this.label1.Location = new System.Drawing.Point(7, 104);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(192, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "High School Management";
-            // 
-            // welcome
-            // 
-            this.welcome.AutoSize = true;
-            this.welcome.Font = new System.Drawing.Font("Palatino Linotype", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcome.Location = new System.Drawing.Point(357, 9);
-            this.welcome.Name = "welcome";
-            this.welcome.Size = new System.Drawing.Size(105, 45);
-            this.welcome.TabIndex = 3;
-            this.welcome.Text = "label6";
             // 
             // panelStudent
             // 
@@ -232,7 +250,7 @@
             this.panelStudent.Controls.Add(this.comboSearchType);
             this.panelStudent.Controls.Add(this.label6);
             this.panelStudent.Controls.Add(this.dataGridViewStudent);
-            this.panelStudent.Location = new System.Drawing.Point(208, 2);
+            this.panelStudent.Location = new System.Drawing.Point(205, 0);
             this.panelStudent.Name = "panelStudent";
             this.panelStudent.Size = new System.Drawing.Size(876, 599);
             this.panelStudent.TabIndex = 6;
@@ -476,18 +494,324 @@
             this.label3.TabIndex = 27;
             this.label3.Text = "Class Name :";
             // 
+            // btnLogOut
+            // 
+            this.btnLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogOut.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogOut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogOut.BackgroundImage")));
+            this.btnLogOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Location = new System.Drawing.Point(1024, 9);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(0);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(50, 50);
+            this.btnLogOut.TabIndex = 30;
+            this.btnLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
+            // panelTeacherHome
+            // 
+            this.panelTeacherHome.BackColor = System.Drawing.Color.Transparent;
+            this.panelTeacherHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelTeacherHome.Controls.Add(this.welcome);
+            this.panelTeacherHome.Font = new System.Drawing.Font("Ravie", 40F);
+            this.panelTeacherHome.Location = new System.Drawing.Point(205, 0);
+            this.panelTeacherHome.Name = "panelTeacherHome";
+            this.panelTeacherHome.Size = new System.Drawing.Size(895, 700);
+            this.panelTeacherHome.TabIndex = 31;
+            this.panelTeacherHome.Visible = false;
+            // 
+            // welcome
+            // 
+            this.welcome.AutoSize = true;
+            this.welcome.BackColor = System.Drawing.Color.Transparent;
+            this.welcome.Font = new System.Drawing.Font("Rockwell Condensed", 40F);
+            this.welcome.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.welcome.Location = new System.Drawing.Point(221, 21);
+            this.welcome.Name = "welcome";
+            this.welcome.Size = new System.Drawing.Size(273, 64);
+            this.welcome.TabIndex = 15;
+            this.welcome.Text = "Welcome User";
+            // 
+            // panelResult
+            // 
+            this.panelResult.BackColor = System.Drawing.Color.Transparent;
+            this.panelResult.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelResult.Controls.Add(this.panelAddResult);
+            this.panelResult.Controls.Add(this.btnAddResult);
+            this.panelResult.Controls.Add(this.btnEditResult);
+            this.panelResult.Font = new System.Drawing.Font("Ravie", 40F);
+            this.panelResult.Location = new System.Drawing.Point(205, 0);
+            this.panelResult.Name = "panelResult";
+            this.panelResult.Size = new System.Drawing.Size(895, 700);
+            this.panelResult.TabIndex = 32;
+            this.panelResult.Visible = false;
+            // 
+            // btnAddResult
+            // 
+            this.btnAddResult.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnAddResult.FlatAppearance.BorderSize = 0;
+            this.btnAddResult.FlatAppearance.CheckedBackColor = System.Drawing.Color.SteelBlue;
+            this.btnAddResult.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAddResult.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnAddResult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddResult.Font = new System.Drawing.Font("Ravie", 25F);
+            this.btnAddResult.Location = new System.Drawing.Point(128, 171);
+            this.btnAddResult.Name = "btnAddResult";
+            this.btnAddResult.Size = new System.Drawing.Size(271, 179);
+            this.btnAddResult.TabIndex = 0;
+            this.btnAddResult.Text = "Add Result";
+            this.btnAddResult.UseVisualStyleBackColor = false;
+            this.btnAddResult.Click += new System.EventHandler(this.btnAddResult_Click);
+            // 
+            // btnEditResult
+            // 
+            this.btnEditResult.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnEditResult.FlatAppearance.BorderSize = 0;
+            this.btnEditResult.FlatAppearance.CheckedBackColor = System.Drawing.Color.SteelBlue;
+            this.btnEditResult.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnEditResult.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnEditResult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditResult.Font = new System.Drawing.Font("Ravie", 25F);
+            this.btnEditResult.Location = new System.Drawing.Point(489, 171);
+            this.btnEditResult.Name = "btnEditResult";
+            this.btnEditResult.Size = new System.Drawing.Size(271, 179);
+            this.btnEditResult.TabIndex = 0;
+            this.btnEditResult.Text = "View/Edit Result";
+            this.btnEditResult.UseVisualStyleBackColor = false;
+            // 
+            // panelAddResult
+            // 
+            this.panelAddResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelAddResult.Controls.Add(this.textTotalMark);
+            this.panelAddResult.Controls.Add(this.textMark);
+            this.panelAddResult.Controls.Add(this.btnCancelResult);
+            this.panelAddResult.Controls.Add(this.btnResultAdd);
+            this.panelAddResult.Controls.Add(this.dataGridViewStudentResult);
+            this.panelAddResult.Controls.Add(this.comboSub);
+            this.panelAddResult.Controls.Add(this.comboClass);
+            this.panelAddResult.Controls.Add(this.comboExam);
+            this.panelAddResult.Controls.Add(this.label4);
+            this.panelAddResult.Controls.Add(this.label10);
+            this.panelAddResult.Controls.Add(this.label7);
+            this.panelAddResult.Controls.Add(this.label9);
+            this.panelAddResult.Controls.Add(this.label8);
+            this.panelAddResult.Font = new System.Drawing.Font("SansSerif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.panelAddResult.Location = new System.Drawing.Point(0, 0);
+            this.panelAddResult.Name = "panelAddResult";
+            this.panelAddResult.Size = new System.Drawing.Size(879, 599);
+            this.panelAddResult.TabIndex = 30;
+            this.panelAddResult.Visible = false;
+            // 
+            // btnResultAdd
+            // 
+            this.btnResultAdd.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnResultAdd.Enabled = false;
+            this.btnResultAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResultAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResultAdd.Location = new System.Drawing.Point(716, 469);
+            this.btnResultAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnResultAdd.Name = "btnResultAdd";
+            this.btnResultAdd.Size = new System.Drawing.Size(118, 40);
+            this.btnResultAdd.TabIndex = 33;
+            this.btnResultAdd.Text = "Add";
+            this.btnResultAdd.UseVisualStyleBackColor = false;
+            // 
+            // comboSub
+            // 
+            this.comboSub.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboSub.Enabled = false;
+            this.comboSub.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.comboSub.FormattingEnabled = true;
+            this.comboSub.Location = new System.Drawing.Point(559, 145);
+            this.comboSub.Margin = new System.Windows.Forms.Padding(2);
+            this.comboSub.Name = "comboSub";
+            this.comboSub.Size = new System.Drawing.Size(265, 33);
+            this.comboSub.TabIndex = 3;
+            this.comboSub.SelectionChangeCommitted += new System.EventHandler(this.comboSub_SelectionChangeCommitted);
+            // 
+            // comboExam
+            // 
+            this.comboExam.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboExam.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.comboExam.FormattingEnabled = true;
+            this.comboExam.Location = new System.Drawing.Point(143, 21);
+            this.comboExam.Margin = new System.Windows.Forms.Padding(2);
+            this.comboExam.Name = "comboExam";
+            this.comboExam.Size = new System.Drawing.Size(143, 26);
+            this.comboExam.TabIndex = 1;
+            this.comboExam.SelectionChangeCommitted += new System.EventHandler(this.comboExam_SelectionChangeCommitted);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label7.Location = new System.Drawing.Point(554, 97);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(149, 25);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Select Subject :";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label8.Location = new System.Drawing.Point(41, 21);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(99, 18);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "Select Exam :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label4.Location = new System.Drawing.Point(325, 22);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(99, 18);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "Select Class :";
+            // 
+            // comboClass
+            // 
+            this.comboClass.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboClass.Enabled = false;
+            this.comboClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.comboClass.FormattingEnabled = true;
+            this.comboClass.Location = new System.Drawing.Point(427, 22);
+            this.comboClass.Margin = new System.Windows.Forms.Padding(2);
+            this.comboClass.Name = "comboClass";
+            this.comboClass.Size = new System.Drawing.Size(143, 26);
+            this.comboClass.TabIndex = 2;
+            this.comboClass.SelectionChangeCommitted += new System.EventHandler(this.comboClass_SelectionChangeCommitted);
+            // 
+            // textMark
+            // 
+            this.textMark.Enabled = false;
+            this.textMark.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textMark.Location = new System.Drawing.Point(557, 380);
+            this.textMark.Name = "textMark";
+            this.textMark.Size = new System.Drawing.Size(267, 45);
+            this.textMark.TabIndex = 6;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label9.Location = new System.Drawing.Point(552, 336);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(152, 25);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "Obtained Mark :";
+            // 
+            // btnCancelResult
+            // 
+            this.btnCancelResult.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnCancelResult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelResult.Location = new System.Drawing.Point(573, 469);
+            this.btnCancelResult.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelResult.Name = "btnCancelResult";
+            this.btnCancelResult.Size = new System.Drawing.Size(118, 40);
+            this.btnCancelResult.TabIndex = 33;
+            this.btnCancelResult.Text = "Cancel";
+            this.btnCancelResult.UseVisualStyleBackColor = false;
+            this.btnCancelResult.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // dataGridViewStudentResult
+            // 
+            this.dataGridViewStudentResult.AllowUserToAddRows = false;
+            this.dataGridViewStudentResult.AllowUserToDeleteRows = false;
+            this.dataGridViewStudentResult.AllowUserToResizeRows = false;
+            this.dataGridViewStudentResult.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewStudentResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewStudentResult.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dataGridViewStudentResult.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewStudentResult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewStudentResult.ColumnHeadersHeight = 30;
+            this.dataGridViewStudentResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewStudentResult.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridViewStudentResult.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridViewStudentResult.Enabled = false;
+            this.dataGridViewStudentResult.Location = new System.Drawing.Point(42, 87);
+            this.dataGridViewStudentResult.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewStudentResult.MultiSelect = false;
+            this.dataGridViewStudentResult.Name = "dataGridViewStudentResult";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("SansSerif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewStudentResult.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewStudentResult.RowHeadersWidth = 51;
+            this.dataGridViewStudentResult.RowTemplate.Height = 24;
+            this.dataGridViewStudentResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridViewStudentResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewStudentResult.ShowEditingIcon = false;
+            this.dataGridViewStudentResult.Size = new System.Drawing.Size(452, 483);
+            this.dataGridViewStudentResult.TabIndex = 4;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label10.Location = new System.Drawing.Point(552, 234);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(116, 25);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "Total Mark :";
+            // 
+            // textTotalMark
+            // 
+            this.textTotalMark.Enabled = false;
+            this.textTotalMark.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textTotalMark.Location = new System.Drawing.Point(557, 278);
+            this.textTotalMark.Name = "textTotalMark";
+            this.textTotalMark.Size = new System.Drawing.Size(267, 45);
+            this.textTotalMark.TabIndex = 5;
+            // 
             // TeacherHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(173)))), ((int)(((byte)(226)))));
             this.ClientSize = new System.Drawing.Size(1083, 595);
-            this.Controls.Add(this.panelAttendance);
+            this.Controls.Add(this.btnLogOut);
+            this.Controls.Add(this.panelResult);
             this.Controls.Add(this.panelStudent);
-
+            this.Controls.Add(this.panelTeacherHome);
+            this.Controls.Add(this.panelAttendance);
             this.Controls.Add(this.panelMenu);
-            this.Controls.Add(this.welcome);
             this.Name = "TeacherHome";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TeacherHome";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TeacherHome_FormClosing);
             this.Load += new System.EventHandler(this.TeacherHome_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
@@ -498,8 +822,13 @@
             this.panelAttendance.ResumeLayout(false);
             this.panelAttendance.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAttendance)).EndInit();
+            this.panelTeacherHome.ResumeLayout(false);
+            this.panelTeacherHome.PerformLayout();
+            this.panelResult.ResumeLayout(false);
+            this.panelAddResult.ResumeLayout(false);
+            this.panelAddResult.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudentResult)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -514,7 +843,6 @@
         public System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label welcome;
         private System.Windows.Forms.Panel panelStudent;
         private System.Windows.Forms.DataGridView dataGridViewStudent;
         private System.Windows.Forms.ComboBox comboSearchType;
@@ -529,5 +857,25 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridAttendance;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Panel panelTeacherHome;
+        private System.Windows.Forms.Label welcome;
+        private System.Windows.Forms.Panel panelResult;
+        private System.Windows.Forms.Button btnEditResult;
+        private System.Windows.Forms.Button btnAddResult;
+        private System.Windows.Forms.Panel panelAddResult;
+        private System.Windows.Forms.TextBox textMark;
+        private System.Windows.Forms.Button btnResultAdd;
+        private System.Windows.Forms.ComboBox comboSub;
+        private System.Windows.Forms.ComboBox comboClass;
+        private System.Windows.Forms.ComboBox comboExam;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnCancelResult;
+        private System.Windows.Forms.DataGridView dataGridViewStudentResult;
+        private System.Windows.Forms.TextBox textTotalMark;
+        private System.Windows.Forms.Label label10;
     }
 }

@@ -318,6 +318,7 @@
             this.Controls.Add(this.btnAddStudent);
             this.Controls.Add(this.groupBox1);
             this.Name = "AddTeacher";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Teacher";
             this.Load += new System.EventHandler(this.AddTeacher_Load);
             ((System.ComponentModel.ISupportInitialize)(this.profileImage)).EndInit();

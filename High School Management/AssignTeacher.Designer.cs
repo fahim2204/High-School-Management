@@ -181,6 +181,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboClass);
             this.Name = "AssignTeacher";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AssignTeacher";
             this.Load += new System.EventHandler(this.AssignTeacher_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTeacher)).EndInit();

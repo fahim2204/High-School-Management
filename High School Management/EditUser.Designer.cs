@@ -179,6 +179,7 @@
             this.Controls.Add(this.textName);
             this.Controls.Add(this.label1);
             this.Name = "EditUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditUser";
             this.Load += new System.EventHandler(this.EditUser_Load);
             this.ResumeLayout(false);

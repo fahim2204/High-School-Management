@@ -64,7 +64,6 @@ namespace High_School_Management
             comboTName.DisplayMember = "name";
             comboTName.DataSource = dt3;
 
-
             conn.Close();
 
         }

@@ -101,6 +101,7 @@
             this.Controls.Add(this.textSubID);
             this.Controls.Add(this.label1);
             this.Name = "AddSubject";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Subject";
             this.ResumeLayout(false);
             this.PerformLayout();
