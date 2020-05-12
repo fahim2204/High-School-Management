@@ -50,7 +50,7 @@ namespace High_School_Management
 
                     if (!IsOpen)
                     {
-                        Home h = new Home(da["name"].ToString());
+                        Home h = new Home(da["name"].ToString(),this);
                         h.Show();
                     }
 
@@ -63,7 +63,7 @@ namespace High_School_Management
                 }
                 else if (da["type"].ToString() == "student")
                 {
-                    Home h = new Home(da["name"].ToString());
+                    Home h = new Home(da["name"].ToString(),this);
                     h.Show();
 
                 }

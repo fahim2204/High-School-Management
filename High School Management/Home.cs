@@ -13,15 +13,17 @@ namespace High_School_Management
         List<Panel> HomePanels = new List<Panel>();
         List<Button> HomeButtons = new List<Button>();
         ToolTip t = new ToolTip();
-        string user;
+        Login login;
+       
 
 
-        public Home(string name)
+        public Home(string name,Login login)
         {
             InitializeComponent();
             AddItem();
-            this.Name = name;
             welcome.Text = "Welcome "+name;
+            //login.Dispose();
+            login.Visible = false;
 
         }
         void AddItem()
@@ -33,6 +35,7 @@ namespace High_School_Management
             HomePanels.Add(panelSubject);
             HomePanels.Add(panelClass);
             HomePanels.Add(panelHome);
+            HomePanels.Add(panelEmployee);
 
 
             HomeButtons.Add(button1);
@@ -142,6 +145,16 @@ namespace High_School_Management
             dataGridViewSubject.DataSource = dt;
             conn.Close();
         }
+        public void RefreshEployeeTable()
+        {
+           
+            conn.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [employee]", conn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridViewEmployee.DataSource = dt;
+            conn.Close();
+        }
         void RefreshClassTable(string st)
 
         {
@@ -244,9 +257,10 @@ namespace High_School_Management
         private void button8_Click(object sender, EventArgs e)
         {
             ResetAll();
+            panelEmployee.Visible = true;
             button8.Enabled = false;
             button8.BackColor = System.Drawing.Color.DodgerBlue;
-            LoadHomePanel();
+            RefreshEployeeTable();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -255,6 +269,7 @@ namespace High_School_Management
             panelHome.Visible = true;
             button1.Enabled = false;
             button1.BackColor = System.Drawing.Color.DodgerBlue;
+            LoadHomePanel();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -317,6 +332,13 @@ namespace High_School_Management
 
         private void button24_Click(object sender, EventArgs e)
         {
+            foreach (Form fm in Application.OpenForms)
+            {
+                if (fm.Name == "Login")
+                {
+                    fm.Visible = true;
+                }
+            }
             this.Dispose();
         }
 
@@ -341,7 +363,7 @@ namespace High_School_Management
             SqlCommand cmd3 = new SqlCommand("select count(*)[count] from [Subject]", conn);
             SqlCommand cmd4 = new SqlCommand("select count(*)[count] from [class]", conn);
             SqlCommand cmd5 = new SqlCommand("select count(*)[count] from [teacher]", conn);
-            SqlCommand cmd6 = new SqlCommand("select count(*)[count] from [users]", conn);
+            SqlCommand cmd6 = new SqlCommand("select count(*)[count] from [employee]", conn);
 
             SqlDataReader dr1 = cmd1.ExecuteReader();
             while (dr1.Read())
@@ -381,6 +403,16 @@ namespace High_School_Management
 
 
             conn.Close();
+        }
+
+        private void button24_Click_1(object sender, EventArgs e)
+        {
+            new AddEmployee(this).Show();
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            new EditEmployee(dataGridViewEmployee.CurrentRow.Cells[0].Value.ToString(), this).Visible = true;
         }
     }
     

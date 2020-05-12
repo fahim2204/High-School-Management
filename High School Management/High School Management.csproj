@@ -74,6 +74,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEmployee.Designer.cs">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddStudents.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,12 @@
     <Compile Include="DeleteClassAssign.Designer.cs">
       <DependentUpon>DeleteClassAssign.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditEmployee.Designer.cs">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +166,9 @@
     <Compile Include="TeacherHome.Designer.cs">
       <DependentUpon>TeacherHome.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddEmployee.resx">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddStudents.resx">
       <DependentUpon>AddStudents.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteClassAssign.resx">
       <DependentUpon>DeleteClassAssign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditEmployee.resx">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditStudent.resx">
       <DependentUpon>EditStudent.cs</DependentUpon>
