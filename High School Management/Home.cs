@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -14,14 +13,14 @@ namespace High_School_Management
         List<Button> HomeButtons = new List<Button>();
         ToolTip t = new ToolTip();
         Login login;
-       
 
 
-        public Home(string name,Login login)
+
+        public Home(string name, Login login)
         {
             InitializeComponent();
             AddItem();
-            welcome.Text = "Welcome "+name;
+            welcome.Text = "Welcome " + name;
             //login.Dispose();
             login.Visible = false;
 
@@ -34,7 +33,7 @@ namespace High_School_Management
             HomePanels.Add(panelUsers);
             HomePanels.Add(panelSubject);
             HomePanels.Add(panelClass);
-            HomePanels.Add(panelTeacherHome);
+            HomePanels.Add(panelHome);
             HomePanels.Add(panelEmployee);
 
 
@@ -83,10 +82,39 @@ namespace High_School_Management
 
         private void button7_Click(object sender, EventArgs e)
         {
+            comboSearchType.SelectedIndex = 1;
             ResetAll();
             panelResult.Visible = true;
             button7.Enabled = false;
             button7.BackColor = System.Drawing.Color.DodgerBlue;
+            RefreshResultTable();
+
+            conn.Open();
+            SqlDataAdapter sda1 = new SqlDataAdapter("SELECT * FROM [class] order by class_id", conn);
+            DataTable dt1 = new DataTable();
+            sda1.Fill(dt1);
+            DataRow dr1 = dt1.NewRow();
+            dr1.ItemArray = new object[] { 0, "--Select Class--" };
+            dt1.Rows.InsertAt(dr1, 0);
+            comboBox1.ValueMember = "class_name";
+            comboBox1.DisplayMember = "class_name";
+            comboBox1.DataSource = dt1;
+
+            conn.Close();
+
+            conn.Open();
+            SqlDataAdapter sda2 = new SqlDataAdapter("SELECT * FROM [exam] order by exam_id", conn);
+            DataTable dt2 = new DataTable();
+            sda2.Fill(dt2);
+            DataRow dr2 = dt2.NewRow();
+            dr2.ItemArray = new object[] { 0, "--Select Exam--" };
+            dt2.Rows.InsertAt(dr2, 0);
+
+            comboBox2.ValueMember = "exam_name";
+            comboBox2.DisplayMember = "exam_name";
+            comboBox2.DataSource = dt2;
+
+            conn.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -97,11 +125,27 @@ namespace High_School_Management
             button2.BackColor = System.Drawing.Color.DodgerBlue;
             RefreshUserTable();
         }
-
+        public void RefreshResultTable()
+        {
+            conn.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [viewAllResultTrans]", conn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridViewResult.DataSource = dt;
+            conn.Close();
+        }
+        public void RefreshResultTable(string type,string value)
+        {
+            conn.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [viewAllResultTrans] where ["+type+ "] like '%" + value + "%'", conn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridViewResult.DataSource = dt;
+            conn.Close();
+        }
         public void RefreshStudentTable()
         {
             conn.Open();
-            //SqlCommand cmd = new SqlCommand("SELECT * FROM [Users]", conn);
             SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [viewAllStudent]", conn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
@@ -111,7 +155,6 @@ namespace High_School_Management
         public void RefreshTeacherTable()
         {
             conn.Open();
-            //SqlCommand cmd = new SqlCommand("SELECT * FROM [Users]", conn);
             SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [viewAllTeacher]", conn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
@@ -121,7 +164,6 @@ namespace High_School_Management
         public void RefreshUserTable()
         {
             conn.Open();
-            //SqlCommand cmd = new SqlCommand("SELECT * FROM [Users]", conn);
             SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [viewAllUser]", conn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
@@ -130,10 +172,10 @@ namespace High_School_Management
         }
         public void RefreshSubjectTable(string st)
         {
-            string connString;  
+            string connString;
             if (st == "All")
                 connString = "SELECT * FROM [viewAllSubject]";
-            else  if(st=="sub")
+            else if (st == "sub")
                 connString = "SELECT * FROM [viewAllSubject] Where [subject name] like '%" + textSubSearch.Text + "%'";
             else
                 connString = "SELECT * FROM [viewAllSubject] Where [Assigned Class]= '" + st + "'";
@@ -147,7 +189,7 @@ namespace High_School_Management
         }
         public void RefreshEployeeTable()
         {
-           
+
             conn.Open();
             SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [employee]", conn);
             DataTable dt = new DataTable();
@@ -180,17 +222,17 @@ namespace High_School_Management
             DataRow dr = dt.NewRow();
             dr.ItemArray = new object[] { 0, "All" };
             dt.Rows.InsertAt(dr, 0);
-           cmbox.ValueMember = "class_name";
+            cmbox.ValueMember = "class_name";
             cmbox.DisplayMember = "class_name";
             cmbox.DataSource = dt;
             conn.Close();
         }
         void GetSubTextbox()
         {
-            
+
             conn.Open();
             SqlCommand cmd = new SqlCommand("SELECT subject_name FROM [subject]", conn);
-            SqlDataReader dr = cmd.ExecuteReader() ;
+            SqlDataReader dr = cmd.ExecuteReader();
             AutoCompleteStringCollection subCollection = new AutoCompleteStringCollection();
             while (dr.Read())
                 subCollection.Add(dr.GetString(0));
@@ -222,10 +264,6 @@ namespace High_School_Management
             RefreshSubjectTable(comboClassList.GetItemText(comboClassList.SelectedItem));
         }
 
-        private void button16_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void comboClassList_SelectionChangeCommitted(object sender, EventArgs e)
         {
@@ -248,7 +286,7 @@ namespace High_School_Management
             ResetAll();
             panelClass.Visible = true;
             button5.Enabled = false;
-            button5.BackColor = System.Drawing.Color.DodgerBlue; 
+            button5.BackColor = System.Drawing.Color.DodgerBlue;
 
             GetComboClassData(comboBoxClass2);
             RefreshClassTable(comboBoxClass2.GetItemText(comboBoxClass2.SelectedItem));
@@ -266,7 +304,7 @@ namespace High_School_Management
         private void button1_Click(object sender, EventArgs e)
         {
             ResetAll();
-            panelTeacherHome.Visible = true;
+            panelHome.Visible = true;
             button1.Enabled = false;
             button1.BackColor = System.Drawing.Color.DodgerBlue;
             LoadHomePanel();
@@ -282,7 +320,7 @@ namespace High_School_Management
 
         private void comboBoxClass2_SelectionChangeCommitted(object sender, EventArgs e)
         {
-             RefreshClassTable(comboBoxClass2.GetItemText(comboBoxClass2.SelectedItem));
+            RefreshClassTable(comboBoxClass2.GetItemText(comboBoxClass2.SelectedItem));
         }
 
         private void button23_Click(object sender, EventArgs e)
@@ -302,7 +340,7 @@ namespace High_School_Management
 
         private void button14_Click(object sender, EventArgs e)
         {
-            new EditStudent(dataGridViewStudent.CurrentRow.Cells[0].Value.ToString(),this).Visible = true;
+            new EditStudent(dataGridViewStudent.CurrentRow.Cells[0].Value.ToString(), this).Visible = true;
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -346,11 +384,11 @@ namespace High_School_Management
         {
 
         }
-       
+
         private void Home_Load(object sender, EventArgs e)
         {
             LoadHomePanel();
-            panelTeacherHome.Visible = true;
+            panelHome.Visible = true;
             button1.Enabled = false;
             button1.BackColor = System.Drawing.Color.DodgerBlue;
         }
@@ -427,6 +465,36 @@ namespace High_School_Management
             //e.Cancel = false;
             //Close();
         }
+
+        private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            conn.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [viewAllResultTrans] where [Class Name] = '"+comboBox1.GetItemText(comboBox1.SelectedItem)+ "' and [Exam Name] = '" + comboBox2.GetItemText(comboBox2.SelectedItem) + "'", conn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridViewResult.DataSource = dt;
+            conn.Close();
+        }
+
+        private void comboBox2_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            conn.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [viewAllResultTrans] where [Exam Name] = '" + comboBox2.GetItemText(comboBox2.SelectedItem) + "' and [Class Name] = '" + comboBox1.GetItemText(comboBox1.SelectedItem) + "'", conn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridViewResult.DataSource = dt;
+            conn.Close();
+        }
+
+        private void textSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (comboSearchType.GetItemText(comboSearchType.SelectedItem) == "Roll")
+                RefreshResultTable("Roll", textSearch.Text);
+            else if (comboSearchType.GetItemText(comboSearchType.SelectedItem) == "Name")
+                RefreshResultTable("Name", textSearch.Text);
+            else if (comboSearchType.GetItemText(comboSearchType.SelectedItem) == "Class Name")
+                RefreshResultTable("Class", textSearch.Text);
+        }
     }
-    
+
 }

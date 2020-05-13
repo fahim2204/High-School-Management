@@ -12,7 +12,6 @@ namespace High_School_Management
         SqlConnection conn = new SqlConnection(@"Server=.\SQLEXPRESS;Database=school;Integrated Security=true");
         List<Panel> HomePanels = new List<Panel>();
         List<Button> HomeButtons = new List<Button>();
-        string name;
         public TeacherHome(string name)
         {
             InitializeComponent();
@@ -341,14 +340,14 @@ namespace High_School_Management
 
 
             conn.Open();
-            SqlDataAdapter sda = new SqlDataAdapter("select [Roll],[Name] from viewAllStudent where Class = '"+ comboClass.GetItemText(comboClass.SelectedItem) + "' order by Roll", conn);
+            SqlDataAdapter sda = new SqlDataAdapter("select [ID],[Roll],[Name] from viewAllStudent where Class = '"+ comboClass.GetItemText(comboClass.SelectedItem) + "' order by Roll", conn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
 
            dataGridViewStudentResult.DataSource = dt;
 
             conn.Close();
-            dataGridViewStudentResult.ClearSelection();
+            //dataGridViewStudentResult.ClearSelection();
         }
 
         private void comboSub_SelectionChangeCommitted(object sender, EventArgs e)
@@ -369,6 +368,113 @@ namespace High_School_Management
             }
             else
                 Environment.Exit(0);
+        }
+
+        private void btnResultAdd_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand("INSERT INTO [result] ([fk_st_id],[fk_class_id],[fk_subject_id],[fk_exam_id],[mark_total],[mark_obtained]) VALUES ("+dataGridViewStudentResult.CurrentRow.Cells[0].Value.ToString()+", (select class_id from class where class_name = '"+ comboClass.GetItemText(comboClass.SelectedItem) +"'),(select subject_id from Subject where subject_name = '"+ comboSub.GetItemText(comboSub.SelectedItem) +"'),(select exam_id from exam where exam_name = '"+ comboExam.GetItemText(comboExam.SelectedItem) +"'),"+textTotalMark.Text+","+textMark.Text+")", conn);
+
+            try
+            {
+                int result = cmd.ExecuteNonQuery();
+                if (result > 0)
+                {
+                    MessageBox.Show("Added Successfully!!!", "Success");
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message.ToString(), "Error"); }
+            conn.Close();
+        }
+
+        public void RefreshResultTable()
+        {
+            conn.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [viewAllResultTrans]", conn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridViewResult.DataSource = dt;
+            conn.Close();
+        }
+        public void RefreshResultTable(string type, string value)
+        {
+            conn.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [viewAllResultTrans] where [" + type + "] like '%" + value + "%'", conn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridViewResult.DataSource = dt;
+            conn.Close();
+        }
+        private void btnEditResult_Click(object sender, EventArgs e)
+        {
+            panelViewResult.Visible = true;
+            panelViewResult.BringToFront();
+
+            comboBox1.SelectedIndex = 1;
+            RefreshResultTable();
+
+            conn.Open();
+            SqlDataAdapter sda1 = new SqlDataAdapter("SELECT * FROM [class] order by class_id", conn);
+            DataTable dt1 = new DataTable();
+            sda1.Fill(dt1);
+            DataRow dr1 = dt1.NewRow();
+            dr1.ItemArray = new object[] { 0, "--Select Class--" };
+            dt1.Rows.InsertAt(dr1, 0);
+            comboBox3.ValueMember = "class_name";
+            comboBox3.DisplayMember = "class_name";
+            comboBox3.DataSource = dt1;
+
+            conn.Close();
+
+            conn.Open();
+            SqlDataAdapter sda2 = new SqlDataAdapter("SELECT * FROM [exam] order by exam_id", conn);
+            DataTable dt2 = new DataTable();
+            sda2.Fill(dt2);
+            DataRow dr2 = dt2.NewRow();
+            dr2.ItemArray = new object[] { 0, "--Select Exam--" };
+            dt2.Rows.InsertAt(dr2, 0);
+
+            comboBox2.ValueMember = "exam_name";
+            comboBox2.DisplayMember = "exam_name";
+            comboBox2.DataSource = dt2;
+
+            conn.Close();
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            panelViewResult.Visible = false;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.GetItemText(comboBox1.SelectedItem) == "Roll")
+                RefreshResultTable("Roll", textBox1.Text);
+            else if (comboBox1.GetItemText(comboBox1.SelectedItem) == "Name")
+                RefreshResultTable("Name", textBox1.Text);
+            else if (comboBox1.GetItemText(comboBox1.SelectedItem) == "Class Name")
+                RefreshResultTable("Class", textBox1.Text);
+        }
+
+        private void comboBox2_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            conn.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [viewAllResultTrans] where [Exam Name] = '" + comboBox2.GetItemText(comboBox2.SelectedItem) + "' and [Class Name] = '" + comboBox3.GetItemText(comboBox3.SelectedItem) + "'", conn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridViewResult.DataSource = dt;
+            conn.Close();
+        }
+
+        private void comboBox3_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            conn.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [viewAllResultTrans] where [Class Name] = '" + comboBox3.GetItemText(comboBox3.SelectedItem) + "' and [Exam Name] = '" + comboBox2.GetItemText(comboBox2.SelectedItem) + "'", conn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridViewResult.DataSource = dt;
+            conn.Close();
         }
     }
 }
