@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="High_School_Management.AddEmployee" Collapsed="true">
+    <Position X="3.5" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAKACAJQAAACAAAACAAAAAAAAQAABAAAAgAA=</HashCode>
+      <FileName>AddEmployee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="High_School_Management.AddStudents" Collapsed="true">
+    <Position X="3.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kEACEAACALIAABwAAACAIAACICwoAAAgQnAARCAAgAA=</HashCode>
+      <FileName>AddStudents.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="High_School_Management.AddSubject" Collapsed="true">
+    <Position X="3.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACACABAABACAAAACAAQAAgAAQAAAAAAAAAA=</HashCode>
+      <FileName>AddSubject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="High_School_Management.AddTeacher" Collapsed="true">
+    <Position X="3.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kEAAEAAAALIAABQAAACAAQACAAwoAAAgQSAARCAAgAA=</HashCode>
+      <FileName>AddTeacher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="High_School_Management.AddUsers" Collapsed="true">
+    <Position X="3.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEQAAKACABAQAACAAAASAAAAIAAAAEABAAAgAAA=</HashCode>
+      <FileName>AddUsers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="High_School_Management.AssignSubject" Collapsed="true">
+    <Position X="3.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQBAAAACABFBgAAACAABACAARAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AssignSubject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="High_School_Management.AssignTeacher" Collapsed="true">
+    <Position X="3.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAASAAAAAiAAABAAAQCAIAADAARAAAAAAAAEAAAAAQA=</HashCode>
+      <FileName>AssignTeacher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="High_School_Management.DeleteClassAssign" Collapsed="true">
+    <Position X="3.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACABABwAAQCAAAACAIQAAAAQAAAEAAAAAAA=</HashCode>
+      <FileName>DeleteClassAssign.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="High_School_Management.EditEmployee" Collapsed="true">
+    <Position X="3.5" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAALACAJQAAACAEAACAAQAIAAAQAABAAAAgAA=</HashCode>
+      <FileName>EditEmployee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="High_School_Management.EditStudent" Collapsed="true">
+    <Position X="3.5" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EEACEAACALIQABQAAACAAAACQAw4AAAiQnAARCAAgAA=</HashCode>
+      <FileName>EditStudent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="High_School_Management.EditSubject" Collapsed="true">
+    <Position X="3.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACACABAABACAAAACAAQIAiAAQEAAAAAQAAA=</HashCode>
+      <FileName>EditSubject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="High_School_Management.EditUser" Collapsed="true">
+    <Position X="3.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAKACABAQABCAAEACAAQAIAAAQEABAAAAAAA=</HashCode>
+      <FileName>EditUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="High_School_Management.Home" Collapsed="true">
+    <Position X="1" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>8DAqUHAQACOEMVo3RICQEJUDgsw7AYhgwHQ/cOhgUbA=</HashCode>
+      <FileName>Home.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="High_School_Management.Login" Collapsed="true">
+    <Position X="3.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAkCAAAAAAAACAAgACAAAAKAAAAEAAAABAAAA=</HashCode>
+      <FileName>Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="High_School_Management.Program" Collapsed="true">
+    <Position X="0.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="High_School_Management.TeacherHome" Collapsed="true">
+    <Position X="6.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>8AgKkAAogGEFEFpQIBChAQkSg8w7eBEAEHALUOhAcLA=</HashCode>
+      <FileName>TeacherHome.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

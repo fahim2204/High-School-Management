@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="High School Management.exe" size="1736616">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="High School Management.exe" size="1737128">
       <assemblyIdentity name="High School Management" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>TUTqTNoJWzzOOK/HQqv4VUOkB5+PzoM/jNneVBiRcEw=</dsig:DigestValue>
+        <dsig:DigestValue>Nec3e28inRNbNzbRA1GFHndVARZ1k8FKtdKMsmHatJM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
